@@ -125,7 +125,7 @@ export const UserShow: React.FC<IResourceComponentsProps> = () => {
               <Table.Column
                 key="is_completed"
                 dataIndex="is_completed"
-                title="Is completed"
+                title="Status"
                 render={(value) => {
                   return (
                     <BooleanField

@@ -19,6 +19,8 @@ import {
   Button,
   Card,
   ExportButton,
+  useDrawerForm,
+  CreateButton,
 } from "@pankod/refine-antd";
 import {
   CrudFilters,
@@ -26,6 +28,7 @@ import {
   IResourceComponentsProps,
 } from "@pankod/refine-core";
 
+import { EditTodo } from "components/todo";
 import { ITodo } from "interfaces";
 
 export const TodoList: React.FC<IResourceComponentsProps> = () => {
@@ -101,92 +104,120 @@ export const TodoList: React.FC<IResourceComponentsProps> = () => {
     },
   });
   const Actions: React.FC = () => (
-    // Button for exporting data
-    <ExportButton onClick={triggerExport} loading={isLoading} />
+    <>
+      <CreateButton>Create</CreateButton>&nbsp;&nbsp;
+      <ExportButton onClick={triggerExport} loading={isLoading} />
+    </>
   );
+
+  const {
+    drawerProps: editDrawerProps,
+    formProps: editFormProps,
+    saveButtonProps: editSaveButtonProps,
+    deleteButtonProps: deleteButtonProps,
+    show: editShow,
+  } = useDrawerForm<ITodo>({
+    action: "edit",
+    resource: "todos",
+    redirect: false,
+  });
   return (
-    <Row gutter={[16, 16]}>
-      <Col xl={6} lg={24} xs={24}>
-        <Card title="Filters">
-          <Filter formProps={searchFormProps} />
-        </Card>
-      </Col>
-      <Col xl={18} xs={24}>
-        <List
-          pageHeaderProps={{
-            extra: <Actions />,
-          }}
-        >
-          <Table {...tableProps} rowKey="id">
-            <Table.Column dataIndex="id" title="id" sorter showSorterTooltip />
-            <Table.Column
-              dataIndex="title"
-              title="title"
-              sorter
-              showSorterTooltip
-            />
-            <Table.Column
-              dataIndex="owner"
-              title="owner"
-              sorter
-              showSorterTooltip
-            />
-            <Table.Column
-              dataIndex="is_completed"
-              title="is_completed"
-              render={(value) => (
-                <BooleanField
-                  value={value === true}
-                  trueIcon={<CheckCircleOutlined />}
-                  falseIcon={<CloseCircleOutlined />}
-                  valueLabelTrue="completed"
-                  valueLabelFalse="incomplete"
-                />
-              )}
-            />
-            <Table.Column
-              dataIndex="created_at"
-              title="created_at"
-              render={(value) => <DateField format="LLL" value={value} />}
-              sorter
-              showSorterTooltip
-            />
-            <Table.Column
-              dataIndex="updated_at"
-              title="updated_at"
-              render={(value) => <DateField format="LLL" value={value} />}
-              sorter
-              showSorterTooltip
-            />
-            <Table.Column<ITodo>
-              title="Actions"
-              dataIndex="actions"
-              render={(_text, record): React.ReactNode => {
-                return (
-                  <Space>
-                    <ShowButton
-                      size="small"
-                      recordItemId={record.id}
-                      hideText
-                    />
-                    <EditButton
-                      size="small"
-                      recordItemId={record.id}
-                      hideText
-                    />
-                    <DeleteButton
-                      size="small"
-                      recordItemId={record.id}
-                      hideText
-                    />
-                  </Space>
-                );
-              }}
-            />
-          </Table>
-        </List>
-      </Col>
-    </Row>
+    <>
+      <Row gutter={[16, 16]}>
+        <Col xl={6} lg={24} xs={24}>
+          <Card title="Filters">
+            <Filter formProps={searchFormProps} />
+          </Card>
+        </Col>
+        <Col xl={18} xs={24}>
+          <List
+            pageHeaderProps={{
+              extra: <Actions />,
+            }}
+          >
+            <Table {...tableProps} rowKey="id">
+              <Table.Column
+                dataIndex="id"
+                title="Id"
+                sorter
+                showSorterTooltip
+              />
+              <Table.Column
+                dataIndex="title"
+                title="Title"
+                sorter
+                showSorterTooltip
+              />
+              <Table.Column
+                dataIndex="owner"
+                title="Owner"
+                sorter
+                showSorterTooltip
+              />
+              <Table.Column
+                dataIndex="is_completed"
+                title="Status"
+                render={(value) => (
+                  <BooleanField
+                    value={value === true}
+                    trueIcon={<CheckCircleOutlined />}
+                    falseIcon={<CloseCircleOutlined />}
+                    valueLabelTrue="completed"
+                    valueLabelFalse="incomplete"
+                  />
+                )}
+              />
+              <Table.Column
+                dataIndex="created_at"
+                title="Created At"
+                render={(value) => <DateField format="LLL" value={value} />}
+                sorter
+                showSorterTooltip
+              />
+              <Table.Column
+                dataIndex="updated_at"
+                title="Updated At"
+                render={(value) => <DateField format="LLL" value={value} />}
+                sorter
+                showSorterTooltip
+              />
+              <Table.Column<ITodo>
+                title="Actions"
+                dataIndex="actions"
+                render={(_text, record): React.ReactNode => {
+                  return (
+                    <Space>
+                      <ShowButton
+                        size="small"
+                        recordItemId={record.id}
+                        hideText
+                      />
+                      <EditButton
+                        onClick={() => editShow(record.id)}
+                        size="small"
+                        recordItemId={record.id}
+                        hideText
+                      />
+                      <DeleteButton
+                        size="small"
+                        recordItemId={record.id}
+                        hideText
+                      />
+                    </Space>
+                  );
+                }}
+              />
+            </Table>
+          </List>
+        </Col>
+      </Row>
+      <EditTodo
+        drawerProps={editDrawerProps}
+        formProps={editFormProps}
+        saveButtonProps={editSaveButtonProps}
+        deleteButtonProps={deleteButtonProps}
+      />
+    </>
   );
 };
 
@@ -205,25 +236,25 @@ const Filter: React.FC<{ formProps: FormProps }> = (props) => {
           </Form.Item>
         </Col>
         <Col xs={24} xl={24} md={12}>
-          <Form.Item label="created_at" name="created_at">
+          <Form.Item label="Created At" name="created_at">
             <RangePicker style={{ width: "100%" }} />
           </Form.Item>
-          <Form.Item label="updated_at" name="updated_at">
+          <Form.Item label="Updated At" name="updated_at">
             <RangePicker style={{ width: "100%" }} />
           </Form.Item>
         </Col>
         <Col xs={24} xl={24} md={8}>
-          <Form.Item label="is_completed" name="is_completed">
+          <Form.Item label="Status" name="is_completed">
             <Select
               allowClear
-              placeholder="Is todo is completed or not?"
+              placeholder="What is the status of todo?"
               options={[
                 {
-                  label: "Yes",
+                  label: "Completed",
                   value: true,
                 },
                 {
-                  label: "No",
+                  label: "Not completed",
                   value: false,
                 },
               ]}

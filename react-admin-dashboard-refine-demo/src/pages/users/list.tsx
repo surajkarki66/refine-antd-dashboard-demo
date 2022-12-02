@@ -117,17 +117,17 @@ export const UserList: React.FC<IResourceComponentsProps> = () => {
           }}
         >
           <Table {...tableProps} rowKey="id">
-            <Table.Column dataIndex="id" title="id" />
+            <Table.Column dataIndex="id" title="Id" />
             <Table.Column
               dataIndex="username"
-              title="username"
+              title="Username"
               sorter
               showSorterTooltip
             />
-            <Table.Column dataIndex="email" title="email" />
+            <Table.Column dataIndex="email" title="Email" />
             <Table.Column
               dataIndex="is_active"
-              title="is_active"
+              title="Status"
               render={(value) => (
                 <BooleanField
                   value={value === true}
@@ -140,14 +140,14 @@ export const UserList: React.FC<IResourceComponentsProps> = () => {
             />
             <Table.Column
               dataIndex="created_at"
-              title="created_at"
+              title="Created"
               render={(value) => <DateField format="LLL" value={value} />}
               sorter
               showSorterTooltip
             />
             <Table.Column
               dataIndex="updated_at"
-              title="updated_at"
+              title="Updated"
               render={(value) => <DateField format="LLL" value={value} />}
               sorter
               showSorterTooltip
@@ -199,25 +199,25 @@ const Filter: React.FC<{ formProps: FormProps }> = (props) => {
           </Form.Item>
         </Col>
         <Col xs={24} xl={24} md={12}>
-          <Form.Item label="created_at" name="created_at">
+          <Form.Item label="Created At" name="created_at">
             <RangePicker style={{ width: "100%" }} />
           </Form.Item>
-          <Form.Item label="updated_at" name="updated_at">
+          <Form.Item label="Updated At" name="updated_at">
             <RangePicker style={{ width: "100%" }} />
           </Form.Item>
         </Col>
         <Col xs={24} xl={24} md={8}>
-          <Form.Item label="is_active" name="is_active">
+          <Form.Item label="Status" name="is_active">
             <Select
               allowClear
               placeholder="Is user is active or not?"
               options={[
                 {
-                  label: "Yes",
+                  label: "Active",
                   value: true,
                 },
                 {
-                  label: "No",
+                  label: "Not Active",
                   value: false,
                 },
               ]}

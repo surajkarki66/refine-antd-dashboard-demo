@@ -134,10 +134,8 @@ const DjangoDataProvider = (
   },
 
   create: async ({ resource, variables }) => {
-    const url = `${apiUrl}/${resource}`;
-
+    const url = `${apiUrl}/${resource}/`;
     const { data } = await httpClient.post(url, variables);
-
     return {
       data,
     };

@@ -1,4 +1,3 @@
-# from rest_framework.generics import CreateAPIView, ListAPIView
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import filters
@@ -44,4 +43,4 @@ class DetailTodoAPIView(RetrieveUpdateDestroyAPIView):
     lookup_field = "id"
 
     def get_queryset(self):
-        return Todo.objects.filter(owner=self.request.user)
+        return Todo.objects.filter()
