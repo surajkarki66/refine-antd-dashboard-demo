@@ -1,5 +1,9 @@
 import moment from "moment";
-import { IResourceComponentsProps, useShow } from "@pankod/refine-core";
+import {
+  IResourceComponentsProps,
+  usePermissions,
+  useShow,
+} from "@pankod/refine-core";
 import {
   Row,
   Col,
@@ -16,7 +20,7 @@ import {
   useTable,
   Typography,
 } from "@pankod/refine-antd";
-import { ITodo } from "interfaces";
+import { ITodo } from "../../interfaces/index";
 
 const { useBreakpoint } = Grid;
 
@@ -26,8 +30,8 @@ export const UserShow: React.FC<IResourceComponentsProps> = () => {
   const { queryResult } = useShow(); // used to fetch a single result
   const { data } = queryResult;
   const record = data?.data;
-
-  const { tableProps, sorter } = useTable<ITodo>({
+  const { data: permissionsData } = usePermissions();
+  const { tableProps } = useTable<ITodo>({
     resource: "todos",
     initialSorter: [
       {
@@ -106,6 +110,7 @@ export const UserShow: React.FC<IResourceComponentsProps> = () => {
             pageHeaderProps={{
               extra: <></>,
             }}
+            canCreate={permissionsData?.includes("admin")}
           >
             <Table rowKey="id" {...tableProps}>
               <Table.Column

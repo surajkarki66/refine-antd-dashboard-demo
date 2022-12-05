@@ -1,4 +1,5 @@
 import React from "react";
+import { newEnforcer } from "casbin";
 import { Refine } from "@pankod/refine-core";
 import { RefineKbarProvider } from "@pankod/refine-kbar";
 import {
@@ -12,14 +13,16 @@ import {
 import dataProvider from "./dataProvider";
 import "@pankod/refine-antd/dist/styles.min.css";
 import routerProvider from "@pankod/refine-react-router-v6";
-import { authProvider } from "authProvider";
-import { AuthPage } from "pages/auth";
+import { authProvider } from "./authProvider";
+import { AuthPage } from "./pages/auth/index";
 
+import { model, adapter } from "./accessControl";
 import { UserList, UserEdit, UserShow } from "./pages/users";
-import { Login } from "pages/login";
-import { Register } from "pages/register";
-import { Dashboard, Title, Header } from "components/index";
-import { TodoList, TodoShow, TodoCreate } from "pages/todos";
+import { DashboardPage } from "./pages/dashboard/index";
+import { Login } from "./pages/login";
+import { Register } from "./pages/register";
+import { Title, Header } from "./components/index";
+import { TodoList, TodoShow, TodoCreate } from "./pages/todos";
 
 const App: React.FC = () => {
   return (
@@ -32,6 +35,40 @@ const App: React.FC = () => {
           ReadyPage={ReadyPage}
           catchAll={<ErrorComponent />}
           authProvider={authProvider}
+          accessControlProvider={{
+            can: async ({ action, params, resource }) => {
+              const enforcer = await newEnforcer(model, adapter);
+              if (
+                action === "delete" ||
+                action === "edit" ||
+                action === "show"
+              ) {
+                return Promise.resolve({
+                  can: await enforcer.enforce(
+                    localStorage.getItem("role"),
+                    `${resource}/${params?.id}`,
+                    action
+                  ),
+                });
+              }
+              if (action === "field") {
+                return Promise.resolve({
+                  can: await enforcer.enforce(
+                    localStorage.getItem("role"),
+                    `${resource}/${params?.field}`,
+                    action
+                  ),
+                });
+              }
+              return Promise.resolve({
+                can: await enforcer.enforce(
+                  localStorage.getItem("role"),
+                  resource,
+                  action
+                ),
+              });
+            },
+          }}
           routerProvider={{
             ...routerProvider,
             routes: [
@@ -72,7 +109,7 @@ const App: React.FC = () => {
               icon: <Icons.CarryOutOutlined />,
             },
           ]}
-          DashboardPage={Dashboard}
+          DashboardPage={DashboardPage}
           Title={Title}
           Header={Header}
         />

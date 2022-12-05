@@ -20,16 +20,17 @@ import {
   Card,
   ExportButton,
   useDrawerForm,
-  CreateButton,
 } from "@pankod/refine-antd";
 import {
   CrudFilters,
   useExport,
   IResourceComponentsProps,
+  usePermissions,
+  useOne,
 } from "@pankod/refine-core";
 
-import { EditTodo } from "components/todo";
-import { ITodo } from "interfaces";
+import { EditTodo } from "../../components/todo/index";
+import { ITodo } from "../../interfaces/index";
 
 export const TodoList: React.FC<IResourceComponentsProps> = () => {
   const { tableProps, searchFormProps, sorter, filters } = useTable<ITodo>({
@@ -103,12 +104,7 @@ export const TodoList: React.FC<IResourceComponentsProps> = () => {
       };
     },
   });
-  const Actions: React.FC = () => (
-    <>
-      <CreateButton>Create</CreateButton>&nbsp;&nbsp;
-      <ExportButton onClick={triggerExport} loading={isLoading} />
-    </>
-  );
+  const { data: permissionsData } = usePermissions();
 
   const {
     drawerProps: editDrawerProps,
@@ -131,9 +127,13 @@ export const TodoList: React.FC<IResourceComponentsProps> = () => {
         </Col>
         <Col xl={18} xs={24}>
           <List
-            pageHeaderProps={{
-              extra: <Actions />,
-            }}
+            canCreate={permissionsData?.includes("admin")}
+            headerButtons={({ defaultButtons }: any) => (
+              <>
+                {defaultButtons}
+                <ExportButton onClick={triggerExport} loading={isLoading} />
+              </>
+            )}
           >
             <Table {...tableProps} rowKey="id">
               <Table.Column

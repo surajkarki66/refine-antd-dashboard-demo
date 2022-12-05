@@ -6,12 +6,17 @@ import {
   Edit,
   useSelect,
 } from "@pankod/refine-antd";
-import { IUser } from "interfaces";
+import { usePermissions } from "@pankod/refine-core";
+import { IUser } from "../../interfaces/index";
 
 export const UserEdit: React.FC = () => {
   const { formProps, saveButtonProps } = useForm<IUser>(); // it also show query result of post while showing default post values
+  const { data: permissionsData } = usePermissions();
   return (
-    <Edit saveButtonProps={saveButtonProps}>
+    <Edit
+      saveButtonProps={saveButtonProps}
+      canDelete={permissionsData?.includes("admin")}
+    >
       <Form {...formProps} layout="vertical">
         <Form.Item
           label="Username"

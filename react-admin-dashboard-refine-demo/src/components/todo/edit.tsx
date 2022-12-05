@@ -9,6 +9,7 @@ import {
   ButtonProps,
   Grid,
 } from "@pankod/refine-antd";
+import { usePermissions } from "@pankod/refine-core";
 
 type EditTodoProps = {
   drawerProps: DrawerProps;
@@ -24,7 +25,7 @@ export const EditTodo: React.FC<EditTodoProps> = ({
   deleteButtonProps,
 }) => {
   const breakpoint = Grid.useBreakpoint();
-
+  const { data: permissionsData } = usePermissions();
   return (
     <Drawer
       {...drawerProps}
@@ -33,6 +34,7 @@ export const EditTodo: React.FC<EditTodoProps> = ({
       zIndex={1001}
     >
       <Edit
+        canDelete={permissionsData?.includes("admin")}
         saveButtonProps={saveButtonProps}
         pageHeaderProps={{ extra: null }}
         resource="todos"

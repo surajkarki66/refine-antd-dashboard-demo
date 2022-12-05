@@ -21,6 +21,8 @@ export interface ILogin {
   email: string;
   username: string;
   token: string;
+  is_staff: boolean;
+  is_superuser: boolean;
 }
 
 export interface IRegister {

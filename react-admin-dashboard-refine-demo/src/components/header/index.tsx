@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useGetIdentity } from "@pankod/refine-core";
+import { useGetIdentity, useList } from "@pankod/refine-core";
 
 import {
   AntdLayout,
@@ -13,13 +13,17 @@ import {
   Col,
   AutoComplete,
 } from "@pankod/refine-antd";
+
+import RefineReactRouter from "@pankod/refine-react-router-v6";
 import "./style.less";
 
 import debounce from "lodash/debounce";
+import { ITodo, IUser } from "../../interfaces";
 
 const { SearchOutlined } = Icons;
 const { Text } = Typography;
 const { useBreakpoint } = Grid;
+const { Link } = RefineReactRouter;
 
 interface IOptionGroup {
   value: string;
@@ -38,8 +42,73 @@ export const Header: React.FC = () => {
   const [value, setValue] = useState<string>("");
   const [options, setOptions] = useState<IOptions[]>([]);
 
+  const renderTitle = (title: string) => (
+    <div className="header-title">
+      <Text style={{ fontSize: "16px", fontWeight: "bold" }}>{title}</Text>
+      <Link style={{ float: "right" }} to={`/${title.toLowerCase()}`}>
+        More
+      </Link>
+    </div>
+  );
+  const renderItem = (title: string, link: string) => ({
+    value: title,
+    label: (
+      <Link to={link} style={{ display: "flex", alignItems: "center" }}>
+        <Text style={{ marginLeft: "16px" }}>{title}</Text>
+      </Link>
+    ),
+  });
+  const { refetch: refetchTodos } = useList<ITodo>({
+    resource: "todos",
+    config: {
+      filters: [{ field: "search", operator: "contains", value }],
+    },
+    queryOptions: {
+      enabled: false,
+      onSuccess: (data) => {
+        const todoOptionGroup = data.data.map((item) =>
+          renderItem(`${item.title}`, `/todos/show/${item.id}`)
+        );
+        if (todoOptionGroup.length > 0) {
+          setOptions((prevOptions) => [
+            ...prevOptions,
+            {
+              label: renderTitle("Todos"),
+              options: todoOptionGroup,
+            },
+          ]);
+        }
+      },
+    },
+  });
+  const { refetch: refetchUsers } = useList<IUser>({
+    resource: "users",
+    config: {
+      filters: [{ field: "search", operator: "contains", value }],
+    },
+    queryOptions: {
+      enabled: false,
+      onSuccess: (data) => {
+        const todoOptionGroup = data.data.map((item) =>
+          renderItem(`${item.username}`, `/users/show/${item.id}`)
+        );
+        if (todoOptionGroup.length > 0) {
+          setOptions((prevOptions) => [
+            ...prevOptions,
+            {
+              label: renderTitle("Users"),
+              options: todoOptionGroup,
+            },
+          ]);
+        }
+      },
+    },
+  });
   useEffect(() => {
     setOptions([]);
+    setOptions([]);
+    refetchTodos();
+    refetchUsers();
   }, [value]);
 
   return (

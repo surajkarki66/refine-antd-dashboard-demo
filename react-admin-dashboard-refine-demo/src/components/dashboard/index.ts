@@ -1,3 +1,2 @@
-export const Dashboard = () => {
-  return null;
-};
+export * from "./MyAreaChart";
+export * from "./MyBarChart";

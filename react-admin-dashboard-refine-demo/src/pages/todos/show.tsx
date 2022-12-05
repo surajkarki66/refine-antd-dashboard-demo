@@ -1,8 +1,13 @@
 import moment from "moment";
 import { Show, Typography, Icons } from "@pankod/refine-antd";
-import { useShow, useOne, IResourceComponentsProps } from "@pankod/refine-core";
+import {
+  useShow,
+  useOne,
+  IResourceComponentsProps,
+  usePermissions,
+} from "@pankod/refine-core";
 
-import { IUser } from "interfaces";
+import { IUser } from "../../interfaces/index";
 
 const { Title, Text } = Typography;
 
@@ -10,7 +15,7 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
   const { queryResult } = useShow();
   const { data, isLoading } = queryResult;
   const record = data?.data;
-
+  const { data: permissionsData } = usePermissions();
   const { data: userData } = useOne<IUser>({
     resource: "users",
     id: record?.owner,
@@ -20,7 +25,11 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
   });
 
   return (
-    <Show isLoading={isLoading}>
+    <Show
+      isLoading={isLoading}
+      canEdit={permissionsData?.includes("admin")}
+      canDelete={permissionsData?.includes("admin")}
+    >
       <Title level={5}>Title</Title>
       <Text>{record?.title}</Text>
       <Title level={5}>Description</Title>

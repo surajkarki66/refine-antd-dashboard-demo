@@ -8,7 +8,7 @@ import {
 } from "@pankod/refine-antd";
 import { IResourceComponentsProps } from "@pankod/refine-core";
 
-import { ITodo, IUser } from "interfaces";
+import { ITodo, IUser } from "../../interfaces/index";
 
 export const TodoCreate: React.FC<IResourceComponentsProps> = () => {
   const { formProps, saveButtonProps } = useForm<ITodo>();

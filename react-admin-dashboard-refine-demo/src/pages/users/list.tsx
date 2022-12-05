@@ -26,7 +26,7 @@ import {
   IResourceComponentsProps,
 } from "@pankod/refine-core";
 
-import { IUser } from "interfaces";
+import { IUser } from "../../interfaces/index";
 
 export const UserList: React.FC<IResourceComponentsProps> = () => {
   const { tableProps, searchFormProps, sorter, filters } = useTable<IUser>({

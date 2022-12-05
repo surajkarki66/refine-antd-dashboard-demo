@@ -3,7 +3,7 @@ import jwt_decode from "jwt-decode";
 import { AuthProvider } from "@pankod/refine-core";
 import { notification } from "@pankod/refine-antd";
 
-import { ILogin, IRegister } from "interfaces";
+import { ILogin, IRegister } from "./interfaces/index";
 
 const axiosInstance = axios.create({ baseURL: "http://127.0.0.1:8000/api" });
 axiosInstance.interceptors.request.use(
@@ -44,8 +44,23 @@ export const authProvider: AuthProvider = {
         password,
       });
       if (data) {
-        localStorage.setItem("auth-token", data.data.token);
-        return Promise.resolve();
+        const { is_staff, is_superuser } = data.data;
+        console.log(is_staff);
+        console.log(is_superuser);
+        if (is_superuser && is_staff) {
+          localStorage.setItem("auth-token", data.data.token);
+          localStorage.setItem("role", "admin");
+          return Promise.resolve();
+        } else if (!is_superuser && is_staff) {
+          localStorage.setItem("auth-token", data.data.token);
+          localStorage.setItem("role", "editor");
+          return Promise.resolve();
+        } else {
+          return Promise.reject({
+            name: "Forbidden!",
+            message: "You don't have a permission to access the dashboard.",
+          });
+        }
       }
     } catch (error: any) {
       return Promise.reject({
@@ -85,6 +100,7 @@ export const authProvider: AuthProvider = {
   },
   logout: () => {
     localStorage.removeItem("auth-token");
+    localStorage.removeItem("role");
     return Promise.resolve();
   },
   checkError: () => Promise.resolve(),
@@ -94,24 +110,26 @@ export const authProvider: AuthProvider = {
       : Promise.reject({ redirectPath: "/login" });
   },
   getPermissions: async () => {
-    const auth = localStorage.getItem("auth-token");
-    if (auth) {
-      const parsedUser = JSON.parse(auth);
-      return Promise.resolve(parsedUser.roles);
-    }
-    return Promise.reject();
+    // fetching role of user from server
+    // for now hardcoding the role
+    return Promise.resolve(["admin", "editor"]);
   },
   getUserIdentity: async () => {
     const token = localStorage.getItem("auth-token");
     if (!token) {
       return Promise.reject();
     }
-    const decoded: { username: string; email: string; exp: number } =
-      jwt_decode(token);
+    const decoded: {
+      username: string;
+      email: string;
+      exp: number;
+      role: string;
+    } = jwt_decode(token);
     return Promise.resolve({
       username: decoded.username,
       email: decoded.email,
       avatar: "https://i.pravatar.cc/150",
+      role: localStorage.getItem("role"),
     });
   },
 };
