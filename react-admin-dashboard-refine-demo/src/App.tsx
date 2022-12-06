@@ -1,7 +1,7 @@
 import React from "react";
 import { newEnforcer } from "casbin";
 import { Refine } from "@pankod/refine-core";
-import { RefineKbarProvider } from "@pankod/refine-kbar";
+import { RefineKbar, RefineKbarProvider } from "@pankod/refine-kbar";
 import {
   notificationProvider,
   Layout,
@@ -23,6 +23,12 @@ import { Login } from "./pages/login";
 import { Register } from "./pages/register";
 import { Title, Header } from "./components/index";
 import { TodoList, TodoShow, TodoCreate } from "./pages/todos";
+
+export const OffLayoutArea: React.FC = () => {
+  return <RefineKbar />;
+};
+
+const CustomErrorPage = <div>Custom Error Page</div>;
 
 const App: React.FC = () => {
   return (
@@ -112,6 +118,7 @@ const App: React.FC = () => {
           DashboardPage={DashboardPage}
           Title={Title}
           Header={Header}
+          OffLayoutArea={OffLayoutArea}
         />
       </ConfigProvider>
     </RefineKbarProvider>

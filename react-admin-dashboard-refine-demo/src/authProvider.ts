@@ -45,8 +45,6 @@ export const authProvider: AuthProvider = {
       });
       if (data) {
         const { is_staff, is_superuser } = data.data;
-        console.log(is_staff);
-        console.log(is_superuser);
         if (is_superuser && is_staff) {
           localStorage.setItem("auth-token", data.data.token);
           localStorage.setItem("role", "admin");
