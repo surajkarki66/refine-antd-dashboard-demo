@@ -78,7 +78,7 @@ const generateFilter = (filters?: CrudFilters) => {
   return queryFilters;
 };
 
-const DjangoDataProvider = (
+export const DjangoDataProvider = (
   apiUrl: string,
   httpClient: AxiosInstance = axiosInstance
 ): Omit<
@@ -220,5 +220,3 @@ const DjangoDataProvider = (
     return Promise.resolve({ data });
   },
 });
-
-export default DjangoDataProvider;

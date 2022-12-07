@@ -26,7 +26,6 @@ import {
   useExport,
   IResourceComponentsProps,
   usePermissions,
-  useOne,
 } from "@pankod/refine-core";
 
 import { EditTodo } from "../../components/todo/index";

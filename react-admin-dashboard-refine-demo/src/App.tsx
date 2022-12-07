@@ -10,13 +10,14 @@ import {
   ConfigProvider,
   Icons,
 } from "@pankod/refine-antd";
-import dataProvider from "./dataProvider";
+import { DjangoDataProvider } from "./providers/dataProvider";
 import "@pankod/refine-antd/dist/styles.min.css";
 import routerProvider from "@pankod/refine-react-router-v6";
-import { authProvider } from "./authProvider";
-import { AuthPage } from "./pages/auth/index";
 
-import { model, adapter } from "./accessControl";
+import { CustomSider } from "./components/index";
+import { authProvider } from "./providers/authProvider";
+import { AuthPage } from "./pages/auth/index";
+import { model, adapter } from "./providers/accessControl";
 import { UserList, UserEdit, UserShow } from "./pages/users";
 import { DashboardPage } from "./pages/dashboard/index";
 import { Login } from "./pages/login";
@@ -33,9 +34,9 @@ const CustomErrorPage = <div>Custom Error Page</div>;
 const App: React.FC = () => {
   return (
     <RefineKbarProvider>
-      <ConfigProvider>
+      <ConfigProvider direction={"ltr"}>
         <Refine
-          dataProvider={dataProvider("http://127.0.0.1:8000/api")}
+          dataProvider={DjangoDataProvider("http://127.0.0.1:8000/api")}
           notificationProvider={notificationProvider}
           Layout={Layout}
           ReadyPage={ReadyPage}
@@ -115,6 +116,7 @@ const App: React.FC = () => {
               icon: <Icons.CarryOutOutlined />,
             },
           ]}
+          Sider={CustomSider}
           DashboardPage={DashboardPage}
           Title={Title}
           Header={Header}

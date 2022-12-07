@@ -3,7 +3,7 @@ import jwt_decode from "jwt-decode";
 import { AuthProvider } from "@pankod/refine-core";
 import { notification } from "@pankod/refine-antd";
 
-import { ILogin, IRegister } from "./interfaces/index";
+import { ILogin, IRegister } from "../interfaces/index";
 
 const axiosInstance = axios.create({ baseURL: "http://127.0.0.1:8000/api" });
 axiosInstance.interceptors.request.use(
