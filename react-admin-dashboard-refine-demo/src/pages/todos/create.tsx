@@ -6,11 +6,36 @@ import {
   useForm,
   useSelect,
 } from "@pankod/refine-antd";
-import { IResourceComponentsProps } from "@pankod/refine-core";
+import {
+  IResourceComponentsProps,
+  useApiUrl,
+  useCustom,
+  HttpError,
+} from "@pankod/refine-core";
+import { useState } from "react";
 
-import { ITodo, IUser } from "../../interfaces/index";
+import {
+  ITodo,
+  IUser,
+  TodoUniqueCheckRequestQuery,
+} from "../../interfaces/index";
 
 export const TodoCreate: React.FC<IResourceComponentsProps> = () => {
+  const [title, setTitle] = useState("");
+  const apiUrl = useApiUrl();
+  const url = `${apiUrl}/todos/getTodoByTitle/${title}/`;
+  const { refetch } = useCustom<ITodo, HttpError, TodoUniqueCheckRequestQuery>({
+    url,
+    method: "get",
+    config: {
+      query: {
+        title,
+      },
+    },
+    queryOptions: {
+      enabled: false,
+    },
+  });
   const { formProps, saveButtonProps } = useForm<ITodo>();
   const { selectProps: userSelectProps } = useSelect<IUser>({
     resource: "users",
@@ -48,9 +73,20 @@ export const TodoCreate: React.FC<IResourceComponentsProps> = () => {
             {
               required: true,
             },
+            {
+              // Custom form validation
+              validator: async (_, value) => {
+                if (!value) return;
+                const { data } = await refetch();
+                if (data && data.data) {
+                  return Promise.reject(new Error("'title' must be unique"));
+                }
+                return Promise.resolve();
+              },
+            },
           ]}
         >
-          <Input />
+          <Input onChange={(event) => setTitle(event.target.value)} />
         </Form.Item>
         <Form.Item
           label="Description"

@@ -1,6 +1,6 @@
 import React from "react";
 import { newEnforcer } from "casbin";
-import { Refine } from "@pankod/refine-core";
+import { Authenticated, Refine } from "@pankod/refine-core";
 import { RefineKbar, RefineKbarProvider } from "@pankod/refine-kbar";
 import {
   notificationProvider,
@@ -14,7 +14,7 @@ import { DjangoDataProvider } from "./providers/dataProvider";
 import "@pankod/refine-antd/dist/styles.min.css";
 import routerProvider from "@pankod/refine-react-router-v6";
 
-import { CustomSider } from "./components/index";
+import { CustomSider, CustomOffLayoutArea } from "./components/index";
 import { authProvider } from "./providers/authProvider";
 import { AuthPage } from "./pages/auth/index";
 import { model, adapter } from "./providers/accessControl";
@@ -24,13 +24,24 @@ import { Login } from "./pages/login";
 import { Register } from "./pages/register";
 import { Title, Header } from "./components/index";
 import { TodoList, TodoShow, TodoCreate } from "./pages/todos";
+import {
+  CustomReadyPage,
+  CustomFooter,
+  CustomPage,
+} from "./pages/custom/index";
 
-export const OffLayoutArea: React.FC = () => {
-  return <RefineKbar />;
-};
+const { RouterComponent } = routerProvider;
 
 const CustomErrorPage = <div>Custom Error Page</div>;
+const CustomRouterComponent = () => <RouterComponent basename="/admin" />; //Now we can access the homepage from www.domain.com/admin
 
+const AuthenticatedCustomPage = () => {
+  return (
+    <Authenticated>
+      <CustomPage />
+    </Authenticated>
+  );
+};
 const App: React.FC = () => {
   return (
     <RefineKbarProvider>
@@ -78,6 +89,7 @@ const App: React.FC = () => {
           }}
           routerProvider={{
             ...routerProvider,
+            RouterComponent: CustomRouterComponent,
             routes: [
               {
                 path: "/register",
@@ -90,6 +102,11 @@ const App: React.FC = () => {
               {
                 path: "/update-password",
                 element: <AuthPage type="updatePassword" />,
+              },
+              {
+                element: <AuthenticatedCustomPage />,
+                path: "/custom-page",
+                layout: true,
               },
             ],
           }}
@@ -120,7 +137,8 @@ const App: React.FC = () => {
           DashboardPage={DashboardPage}
           Title={Title}
           Header={Header}
-          OffLayoutArea={OffLayoutArea}
+          Footer={CustomFooter}
+          OffLayoutArea={() => <CustomOffLayoutArea />}
         />
       </ConfigProvider>
     </RefineKbarProvider>

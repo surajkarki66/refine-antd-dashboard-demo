@@ -31,3 +31,7 @@ export interface IRegister {
   username: string;
   email: string;
 }
+
+export interface TodoUniqueCheckRequestQuery {
+  title: string;
+}

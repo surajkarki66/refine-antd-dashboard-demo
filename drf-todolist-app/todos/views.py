@@ -1,5 +1,5 @@
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView,ListAPIView
-from rest_framework.permissions import IsAuthenticated,IsAdminUser
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView, RetrieveAPIView
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework import filters
 from authentication.jwtauthenticate import JWTAuthentication
 from todos.serializers import TodoSerializer
@@ -39,12 +39,13 @@ class ListCreateTodoAPIView(ListCreateAPIView):
 class DetailTodoAPIView(RetrieveUpdateDestroyAPIView):
     serializer_class = TodoSerializer
     authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated,IsAdminUser]
+    permission_classes = [IsAuthenticated, IsAdminUser]
 
     lookup_field = "id"
 
     def get_queryset(self):
         return Todo.objects.filter()
+
 
 class TodaysTodo(ListAPIView):
     serializer_class = TodoSerializer
@@ -53,7 +54,20 @@ class TodaysTodo(ListAPIView):
 
     def get_queryset(self):
         today = datetime.datetime.today()
-        start_date = datetime.datetime(year=today.year, month=today.month, day=today.day, hour=0, minute=0, second=0) # represents 00:00:00
-        end_date = datetime.datetime(year=today.year, month=today.month, day=today.day, hour=23, minute=59, second=59) # represents 23:59:59
-        qs = Todo.objects.filter(created_at__range=(start_date, end_date)) # today's objects
+        start_date = datetime.datetime(year=today.year, month=today.month,
+                                       day=today.day, hour=0, minute=0, second=0)  # represents 00:00:00
+        end_date = datetime.datetime(year=today.year, month=today.month,
+                                     day=today.day, hour=23, minute=59, second=59)  # represents 23:59:59
+        qs = Todo.objects.filter(created_at__range=(
+            start_date, end_date))  # today's objects
         return qs
+
+
+class GetTodoByTitle(RetrieveAPIView):
+    serializer_class = TodoSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated, IsAdminUser]
+    lookup_field = "title"
+
+    def get_queryset(self):
+        return Todo.objects.filter()
