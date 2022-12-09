@@ -23,7 +23,12 @@ import { DashboardPage } from "./pages/dashboard/index";
 import { Login } from "./pages/login";
 import { Register } from "./pages/register";
 import { Title, Header } from "./components/index";
-import { TodoList, TodoShow, TodoCreate } from "./pages/todos";
+import {
+  TodoList,
+  TodoShow,
+  TodoCreate,
+  CustomTodoCreate,
+} from "./pages/todos";
 import {
   CustomReadyPage,
   CustomFooter,

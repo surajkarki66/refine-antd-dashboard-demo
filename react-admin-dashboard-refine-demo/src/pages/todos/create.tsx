@@ -73,17 +73,17 @@ export const TodoCreate: React.FC<IResourceComponentsProps> = () => {
             {
               required: true,
             },
-            {
-              // Custom form validation
-              validator: async (_, value) => {
-                if (!value) return;
-                const { data } = await refetch();
-                if (data && data.data) {
-                  return Promise.reject(new Error("'title' must be unique"));
-                }
-                return Promise.resolve();
-              },
-            },
+            // {
+            //   // Custom form validation
+            //   validator: async (_, value) => {
+            //     if (!value) return;
+            //     const { data } = await refetch();
+            //     if (data && data.data) {
+            //       return Promise.reject(new Error("'title' must be unique"));
+            //     }
+            //     return Promise.resolve();
+            //   },
+            // },
           ]}
         >
           <Input onChange={(event) => setTitle(event.target.value)} />
