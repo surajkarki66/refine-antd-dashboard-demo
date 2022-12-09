@@ -8,8 +8,9 @@ import {
   useIsExistAuthentication,
   useLogout,
   useMenu,
+  useSubscription,
 } from "@pankod/refine-core";
-import { AntdLayout, Menu, Grid, Sider } from "@pankod/refine-antd";
+import { AntdLayout, Menu, Grid, Sider, Badge } from "@pankod/refine-antd";
 import {
   DashboardOutlined,
   LogoutOutlined,
@@ -18,6 +19,7 @@ import {
 import { antLayoutSider, antLayoutSiderMobile } from "./styles";
 
 export const CustomSider: typeof Sider = ({ render }) => {
+  const [subscriptionCount, setSubscriptionCount] = useState(0);
   const [collapsed, setCollapsed] = useState<boolean>(false);
   const isExistAuthentication = useIsExistAuthentication();
   const { Link } = useRouterContext();
@@ -31,6 +33,12 @@ export const CustomSider: typeof Sider = ({ render }) => {
 
   const isMobile =
     typeof breakpoint.lg === "undefined" ? false : !breakpoint.lg;
+
+  useSubscription({
+    channel: "resources/todos",
+    types: ["created", "updated"],
+    onLiveEvent: () => setSubscriptionCount((prev) => prev + 1),
+  });
 
   const renderTreeView = (tree: ITreeMenu[], selectedKey: string) => {
     return tree.map((item: ITreeMenu) => {
@@ -63,10 +71,19 @@ export const CustomSider: typeof Sider = ({ render }) => {
             }}
             icon={icon ?? (isRoute && <UnorderedListOutlined />)}
           >
-            <Link to={route}>{label}</Link>
-            {!collapsed && isSelected && (
-              <div className="ant-menu-tree-arrow" />
-            )}
+            <div>
+              <Link to={route}>{label}</Link>
+              {label === "Todos" && (
+                <Badge
+                  size="small"
+                  count={subscriptionCount}
+                  offset={[2, -15]}
+                />
+              )}
+              {!collapsed && isSelected && (
+                <div className="ant-menu-tree-arrow" />
+              )}
+            </div>
           </Menu.Item>
         </CanAccess>
       );

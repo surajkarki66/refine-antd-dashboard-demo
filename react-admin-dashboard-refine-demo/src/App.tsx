@@ -125,8 +125,10 @@ const App: React.FC = () => {
             liveMode: "auto",
           }}
           resources={[
+            // { name: "Tables" }, // Multi level menu
             {
               name: "users",
+              // parentName: "Tables",
               list: UserList,
               edit: UserEdit,
               show: UserShow,
@@ -135,6 +137,7 @@ const App: React.FC = () => {
             },
             {
               name: "todos",
+              // parentName: "Tables",
               list: TodoList,
               show: TodoShow,
               create: TodoCreate,
