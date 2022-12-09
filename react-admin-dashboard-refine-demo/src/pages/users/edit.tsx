@@ -25,7 +25,6 @@ export const UserEdit: React.FC = () => {
       }
     },
   });
-
   const handleRefresh = () => {
     queryResult?.refetch();
     setDeprecated(undefined);

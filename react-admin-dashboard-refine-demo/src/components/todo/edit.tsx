@@ -8,6 +8,9 @@ import {
   Radio,
   ButtonProps,
   Grid,
+  Alert,
+  RefreshButton,
+  ListButton,
 } from "@pankod/refine-antd";
 import { usePermissions } from "@pankod/refine-core";
 
@@ -16,6 +19,8 @@ type EditTodoProps = {
   formProps: FormProps;
   saveButtonProps: ButtonProps;
   deleteButtonProps: ButtonProps;
+  handleRefresh: () => void;
+  deprecated: "deleted" | "updated" | undefined;
 };
 
 export const EditTodo: React.FC<EditTodoProps> = ({
@@ -23,9 +28,12 @@ export const EditTodo: React.FC<EditTodoProps> = ({
   formProps,
   saveButtonProps,
   deleteButtonProps,
+  handleRefresh,
+  deprecated,
 }) => {
   const breakpoint = Grid.useBreakpoint();
   const { data: permissionsData } = usePermissions();
+
   return (
     <Drawer
       {...drawerProps}
@@ -40,6 +48,22 @@ export const EditTodo: React.FC<EditTodoProps> = ({
         resource="todos"
         deleteButtonProps={deleteButtonProps}
       >
+        {deprecated === "deleted" && (
+          <Alert
+            message="This user is deleted."
+            type="warning"
+            style={{ marginBottom: 20 }}
+            action={<ListButton size="small" />}
+          />
+        )}
+        {deprecated === "updated" && (
+          <Alert
+            message="This user is updated. Refresh to see changes."
+            type="warning"
+            style={{ marginBottom: 20 }}
+            action={<RefreshButton size="small" onClick={handleRefresh} />}
+          />
+        )}
         <Form {...formProps} layout="vertical">
           <Form.Item
             label="Title"

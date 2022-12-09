@@ -27,11 +27,19 @@ import {
   IResourceComponentsProps,
   usePermissions,
 } from "@pankod/refine-core";
+import { useState } from "react";
 
 import { EditTodo } from "../../components/todo/index";
 import { ITodo } from "../../interfaces/index";
 
 export const TodoList: React.FC<IResourceComponentsProps> = () => {
+  const [deprecated, setDeprecated] = useState<
+    "deleted" | "updated" | undefined
+  >();
+  const handleRefresh = () => {
+    queryResult?.refetch();
+    setDeprecated(undefined);
+  };
   const { tableProps, searchFormProps, sorter, filters } = useTable<ITodo>({
     initialCurrent: 1,
     initialPageSize: 10,
@@ -111,10 +119,17 @@ export const TodoList: React.FC<IResourceComponentsProps> = () => {
     saveButtonProps: editSaveButtonProps,
     deleteButtonProps: deleteButtonProps,
     show: editShow,
+    queryResult,
   } = useDrawerForm<ITodo>({
     action: "edit",
     resource: "todos",
     redirect: false,
+    liveMode: "manual",
+    onLiveEvent: (event) => {
+      if (event.type === "deleted" || event.type === "updated") {
+        setDeprecated(event.type);
+      }
+    },
   });
   return (
     <>
@@ -215,6 +230,8 @@ export const TodoList: React.FC<IResourceComponentsProps> = () => {
         formProps={editFormProps}
         saveButtonProps={editSaveButtonProps}
         deleteButtonProps={deleteButtonProps}
+        handleRefresh={handleRefresh}
+        deprecated={deprecated}
       />
     </>
   );
