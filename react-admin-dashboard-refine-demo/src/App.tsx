@@ -2,6 +2,7 @@ import React from "react";
 import { newEnforcer } from "casbin";
 import { Authenticated, Refine } from "@pankod/refine-core";
 import { RefineKbar, RefineKbarProvider } from "@pankod/refine-kbar";
+import { liveProvider } from "@pankod/refine-ably";
 import {
   notificationProvider,
   Layout,
@@ -14,6 +15,7 @@ import { DjangoDataProvider } from "./providers/dataProvider";
 import "@pankod/refine-antd/dist/styles.min.css";
 import routerProvider from "@pankod/refine-react-router-v6";
 
+import { ablyClient } from "./utility";
 import { CustomSider, CustomOffLayoutArea } from "./components/index";
 import { authProvider } from "./providers/authProvider";
 import { AuthPage } from "./pages/auth/index";
@@ -115,10 +117,12 @@ const App: React.FC = () => {
               },
             ],
           }}
+          liveProvider={liveProvider(ablyClient)}
           LoginPage={Login}
           options={{
             syncWithLocation: true,
             warnWhenUnsavedChanges: true,
+            liveMode: "auto",
           }}
           resources={[
             {
