@@ -12,3 +12,12 @@ class Todo(TrackingModel):
 
     def __str__(self):
         return self.title
+
+
+class SubTask(TrackingModel):
+    title   = models.CharField(max_length=255)
+    is_completed = models.BooleanField(default=False)
+    todo = models.ForeignKey(to=Todo, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
