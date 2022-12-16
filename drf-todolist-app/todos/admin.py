@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import Todo,SubTask
+from .models import Todo
+from subtasks.models import SubTask
 
 # Register your models here.
 class SubTaskInline(admin.StackedInline):

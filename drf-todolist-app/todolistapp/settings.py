@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django_filters",
     "drf_yasg",
     "corsheaders",
+    "subtasks"
 ]
 
 MIDDLEWARE = [
@@ -92,7 +93,7 @@ DATABASES = {
 
 REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
-    "PAGE_SIZE": 10,
+    "PAGE_SIZE": 7,
 }
 # REST_FRAMEWORK = {
 #     'DEFAULT_AUTHENTICATION_CLASSES': [

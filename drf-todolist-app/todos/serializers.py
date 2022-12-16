@@ -14,3 +14,15 @@ class TodoSerializer(ModelSerializer):
             "created_at",
             "updated_at",
         )
+
+class SubTaskSerializer(ModelSerializer):
+    class Meta:
+        model = Todo
+        fields = (
+            "id",
+            "title",
+            "is_completed",
+            "todo",
+            "created_at",
+            "updated_at",
+        )

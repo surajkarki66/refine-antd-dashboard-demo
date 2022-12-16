@@ -2,7 +2,7 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework import filters
 from authentication.jwtauthenticate import JWTAuthentication
-from todos.serializers import TodoSerializer
+from todos.serializers import TodoSerializer, SubTaskSerializer
 from todos.models import Todo
 import datetime
 from django_filters.rest_framework import DjangoFilterBackend
@@ -30,6 +30,7 @@ class ListCreateTodoAPIView(ListCreateAPIView):
     ordering_fields = ["id", "title", "created_at", "updated_at", "owner"]
 
     def perform_create(self, serializer):
+        print(self.request.user)
         return serializer.save(owner=self.request.user)
 
     def get_queryset(self):
