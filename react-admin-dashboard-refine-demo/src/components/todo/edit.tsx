@@ -50,7 +50,7 @@ export const EditTodo: React.FC<EditTodoProps> = ({
       >
         {deprecated === "deleted" && (
           <Alert
-            message="This user is deleted."
+            message="This todo is deleted."
             type="warning"
             style={{ marginBottom: 20 }}
             action={<ListButton size="small" />}
@@ -58,7 +58,7 @@ export const EditTodo: React.FC<EditTodoProps> = ({
         )}
         {deprecated === "updated" && (
           <Alert
-            message="This user is updated. Refresh to see changes."
+            message="This todo is updated. Refresh to see changes."
             type="warning"
             style={{ marginBottom: 20 }}
             action={<RefreshButton size="small" onClick={handleRefresh} />}

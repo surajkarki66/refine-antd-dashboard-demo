@@ -88,7 +88,7 @@ export const DjangoDataProvider = (
   getList: async ({
     resource,
     hasPagination = true,
-    pagination = { current: 1, pageSize: 10 },
+    pagination = { current: 1, pageSize: 7 },
     filters,
     sort,
   }) => {
@@ -127,7 +127,6 @@ export const DjangoDataProvider = (
     const { data } = await httpClient.get(
       `${apiUrl}/${resource}?${stringify({ id: String(ids) })}`
     );
-
     return {
       data,
     };

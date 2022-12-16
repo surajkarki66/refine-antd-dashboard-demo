@@ -35,3 +35,21 @@ export interface IRegister {
 export interface TodoUniqueCheckRequestQuery {
   title: string;
 }
+
+export interface ISubTask {
+  id: BaseKey;
+  title: string;
+  is_completed: boolean;
+  todo: BaseKey;
+  created_at: Date;
+  updated_at: Date;
+}
+
+export interface ITodoListResponse {
+  data: {
+    count: number;
+    next: string;
+    previous: string;
+    results: ITodo[];
+  };
+}

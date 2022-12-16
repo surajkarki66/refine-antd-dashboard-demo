@@ -1,7 +1,7 @@
 import React from "react";
 import { newEnforcer } from "casbin";
 import { Authenticated, Refine } from "@pankod/refine-core";
-import { RefineKbar, RefineKbarProvider } from "@pankod/refine-kbar";
+import { RefineKbarProvider } from "@pankod/refine-kbar";
 import { liveProvider } from "@pankod/refine-ably";
 import {
   notificationProvider,
@@ -31,6 +31,7 @@ import {
   TodoCreate,
   CustomTodoCreate,
 } from "./pages/todos";
+import { SubtaskCreate, SubtaskList } from "./pages/subtasks";
 import {
   CustomReadyPage,
   CustomFooter,
@@ -143,6 +144,14 @@ const App: React.FC = () => {
               create: TodoCreate,
               canDelete: true,
               icon: <Icons.CarryOutOutlined />,
+            },
+            {
+              name: "subtasks",
+              // parentName: "Tables",
+              list: SubtaskList,
+              create: SubtaskCreate,
+              canDelete: true,
+              icon: <Icons.DownSquareOutlined />,
             },
           ]}
           Sider={CustomSider}

@@ -42,7 +42,7 @@ export const TodoList: React.FC<IResourceComponentsProps> = () => {
   };
   const { tableProps, searchFormProps, sorter, filters } = useTable<ITodo>({
     initialCurrent: 1,
-    initialPageSize: 10,
+    initialPageSize: 7,
     onSearch: (params: any) => {
       const filters: CrudFilters = [];
       const { search, created_at, updated_at, is_completed } = params;
