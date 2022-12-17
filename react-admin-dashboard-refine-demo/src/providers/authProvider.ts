@@ -74,7 +74,9 @@ export const authProvider: AuthProvider = {
         username,
         password,
       });
-      return Promise.resolve();
+      if (data) {
+        return Promise.resolve();
+      }
     } catch (error: any) {
       return Promise.reject({
         name: "Register Failed!",

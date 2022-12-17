@@ -4,7 +4,6 @@ import {
   Table,
   BooleanField,
   Icons,
-  useSelect,
   Space,
   useEditableTable,
   Form,
@@ -18,11 +17,13 @@ import {
   Col,
   Select,
   Card,
+  TextField,
 } from "@pankod/refine-antd";
 import {
   useExport,
   IResourceComponentsProps,
   CrudFilters,
+  useMany,
 } from "@pankod/refine-core";
 
 import { ISubTask, ITodo } from "../../interfaces/index";
@@ -109,9 +110,13 @@ export const SubtaskList: React.FC<IResourceComponentsProps> = () => {
       };
     },
   });
-
-  const { selectProps: todoSelectProps } = useSelect<ITodo>({
+  const todoIds = tableProps?.dataSource?.map((item) => item.todo) ?? [];
+  const { data, isLoading: isloading }: any = useMany<ITodo>({
     resource: "todos",
+    ids: todoIds,
+    queryOptions: {
+      enabled: todoIds.length > 0,
+    },
   });
 
   return (
@@ -165,8 +170,25 @@ export const SubtaskList: React.FC<IResourceComponentsProps> = () => {
                 sorter
                 showSorterTooltip
               />
-              {/* TODO: Add a link to go to specified todo details and also show todo title not id */}
-              <Table.Column dataIndex="todo" title="Todo" />
+              <Table.Column
+                dataIndex={["todo"]}
+                title="Todo"
+                render={(value) => {
+                  if (isloading) {
+                    return <TextField value="Loading..." />;
+                  }
+
+                  return (
+                    <TextField
+                      value={
+                        data?.data?.results.find(
+                          (item: { id: any }) => item.id === value
+                        )?.title
+                      }
+                    />
+                  );
+                }}
+              />
 
               <Table.Column
                 dataIndex="is_completed"

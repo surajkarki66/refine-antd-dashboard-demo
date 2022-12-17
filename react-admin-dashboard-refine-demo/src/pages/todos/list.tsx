@@ -20,17 +20,19 @@ import {
   Card,
   ExportButton,
   useDrawerForm,
+  TextField,
 } from "@pankod/refine-antd";
 import {
   CrudFilters,
   useExport,
   IResourceComponentsProps,
   usePermissions,
+  useMany,
 } from "@pankod/refine-core";
 import { useState } from "react";
 
 import { EditTodo } from "../../components/todo/index";
-import { ITodo } from "../../interfaces/index";
+import { ITodo, IUser } from "../../interfaces/index";
 
 export const TodoList: React.FC<IResourceComponentsProps> = () => {
   const [deprecated, setDeprecated] = useState<
@@ -117,7 +119,7 @@ export const TodoList: React.FC<IResourceComponentsProps> = () => {
     drawerProps: editDrawerProps,
     formProps: editFormProps,
     saveButtonProps: editSaveButtonProps,
-    deleteButtonProps: deleteButtonProps,
+    deleteButtonProps,
     show: editShow,
     queryResult,
   } = useDrawerForm<ITodo>({
@@ -129,6 +131,14 @@ export const TodoList: React.FC<IResourceComponentsProps> = () => {
       if (event.type === "deleted" || event.type === "updated") {
         setDeprecated(event.type);
       }
+    },
+  });
+  const userIds = tableProps?.dataSource?.map((item) => item.owner) ?? [];
+  const { data, isLoading: isloading }: any = useMany<IUser>({
+    resource: "users",
+    ids: userIds,
+    queryOptions: {
+      enabled: userIds.length > 0,
     },
   });
   return (
@@ -163,10 +173,23 @@ export const TodoList: React.FC<IResourceComponentsProps> = () => {
                 showSorterTooltip
               />
               <Table.Column
-                dataIndex="owner"
+                dataIndex={["owner"]}
                 title="Owner"
-                sorter
-                showSorterTooltip
+                render={(value) => {
+                  if (isloading) {
+                    return <TextField value="Loading..." />;
+                  }
+
+                  return (
+                    <TextField
+                      value={
+                        data?.data?.results.find(
+                          (item: { id: any }) => item.id === value
+                        )?.username
+                      }
+                    />
+                  );
+                }}
               />
               <Table.Column
                 dataIndex="is_completed"

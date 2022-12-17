@@ -44,12 +44,3 @@ export interface ISubTask {
   created_at: Date;
   updated_at: Date;
 }
-
-export interface ITodoListResponse {
-  data: {
-    count: number;
-    next: string;
-    previous: string;
-    results: ITodo[];
-  };
-}

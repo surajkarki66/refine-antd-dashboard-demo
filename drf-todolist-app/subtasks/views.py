@@ -25,7 +25,7 @@ class ListCreateSubtaskAPIView(ListCreateAPIView):
         "created_at": ["gte", "lte", "exact", "gt", "lt"],
         "updated_at": ["gte", "lte", "exact", "gt", "lt"],
         "is_completed": ["exact"],
-        "todo": ["exact"],
+        "todo": ["in", "exact"],
     }
     search_fields = ["id", "title"]
     ordering_fields = ["id", "title", "created_at", "updated_at", "todo"]

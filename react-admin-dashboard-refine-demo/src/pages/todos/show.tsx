@@ -28,7 +28,7 @@ import { useShow, IResourceComponentsProps, useOne } from "@pankod/refine-core";
 
 import { ISubTask, IUser } from "../../interfaces/index";
 import { CreateSubtask } from "../../components/subtask";
-import { useState } from "react";
+
 const { useBreakpoint } = Grid;
 const { Title, Text } = Typography;
 

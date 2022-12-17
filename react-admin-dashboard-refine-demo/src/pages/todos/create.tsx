@@ -28,6 +28,7 @@ export const TodoCreate: React.FC<IResourceComponentsProps> = () => {
   const [title, setTitle] = useState("");
   const apiUrl = useApiUrl();
   const url = `${apiUrl}/todos/getTodoByTitle/${title}/`;
+
   const { refetch } = useCustom<ITodo, HttpError, TodoUniqueCheckRequestQuery>({
     url,
     method: "get",
@@ -40,8 +41,8 @@ export const TodoCreate: React.FC<IResourceComponentsProps> = () => {
       enabled: false,
     },
   });
-
-  const { formProps, saveButtonProps } = useForm<ITodo>();
+  console.log("Refetch", refetch);
+  const { formProps } = useForm<ITodo>();
   const { selectProps: userSelectProps } = useSelect<IUser>({
     resource: "users",
     optionLabel: "username",

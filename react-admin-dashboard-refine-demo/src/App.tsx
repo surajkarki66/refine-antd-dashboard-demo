@@ -29,18 +29,18 @@ import {
   TodoList,
   TodoShow,
   TodoCreate,
-  CustomTodoCreate,
+  //CustomTodoCreate,
 } from "./pages/todos";
 import { SubtaskCreate, SubtaskList } from "./pages/subtasks";
 import {
-  CustomReadyPage,
+  // CustomReadyPage,
   CustomFooter,
   CustomPage,
 } from "./pages/custom/index";
 
 const { RouterComponent } = routerProvider;
 
-const CustomErrorPage = <div>Custom Error Page</div>;
+//const CustomErrorPage = <div>Custom Error Page</div>;
 const CustomRouterComponent = () => <RouterComponent basename="/admin" />; //Now we can access the homepage from www.domain.com/admin
 
 const AuthenticatedCustomPage = () => {

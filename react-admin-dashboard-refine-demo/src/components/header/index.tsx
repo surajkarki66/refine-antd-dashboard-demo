@@ -18,7 +18,7 @@ import RefineReactRouter from "@pankod/refine-react-router-v6";
 import "./style.less";
 
 import debounce from "lodash/debounce";
-import { ITodo, IUser } from "../../interfaces";
+import { ISubTask, ITodo, IUser } from "../../interfaces";
 
 const { SearchOutlined } = Icons;
 const { Text } = Typography;
@@ -89,15 +89,38 @@ export const Header: React.FC = () => {
     queryOptions: {
       enabled: false,
       onSuccess: (data) => {
-        const todoOptionGroup = data.data.map((item) =>
+        const userOptionGroup = data.data.map((item) =>
           renderItem(`${item.username}`, `/users/show/${item.id}`)
         );
-        if (todoOptionGroup.length > 0) {
+        if (userOptionGroup.length > 0) {
           setOptions((prevOptions) => [
             ...prevOptions,
             {
               label: renderTitle("Users"),
-              options: todoOptionGroup,
+              options: userOptionGroup,
+            },
+          ]);
+        }
+      },
+    },
+  });
+  const { refetch: refetchSubtasks } = useList<ISubTask>({
+    resource: "subtasks",
+    config: {
+      filters: [{ field: "search", operator: "contains", value }],
+    },
+    queryOptions: {
+      enabled: false,
+      onSuccess: (data) => {
+        const subtaskOptionGroup = data.data.map((item) =>
+          renderItem(`${item.title}`, `/subtasks/show/${item.id}`)
+        );
+        if (subtaskOptionGroup.length > 0) {
+          setOptions((prevOptions) => [
+            ...prevOptions,
+            {
+              label: renderTitle("Subtasks"),
+              options: subtaskOptionGroup,
             },
           ]);
         }
@@ -106,10 +129,10 @@ export const Header: React.FC = () => {
   });
   useEffect(() => {
     setOptions([]);
-    setOptions([]);
     refetchTodos();
     refetchUsers();
-  }, [value]);
+    refetchSubtasks();
+  }, [value, refetchTodos, refetchUsers, refetchSubtasks]);
 
   return (
     <AntdLayout.Header

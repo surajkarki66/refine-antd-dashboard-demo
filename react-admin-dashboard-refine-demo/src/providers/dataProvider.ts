@@ -43,7 +43,7 @@ const generateSort = (sort?: CrudSorting) => {
     const _sort: string[] = [];
     const _order: string[] = [];
 
-    sort.map((item) => {
+    sort.forEach((item) => {
       _sort.push(item.field);
       _order.push(item.order);
     });
@@ -60,7 +60,7 @@ const generateSort = (sort?: CrudSorting) => {
 const generateFilter = (filters?: CrudFilters) => {
   const queryFilters: { [key: string]: string } = {};
   if (filters) {
-    filters.map((filter) => {
+    filters.forEach((filter) => {
       if (filter.operator === "or" || filter.operator === "and") {
         // do according
       }
@@ -125,7 +125,7 @@ export const DjangoDataProvider = (
 
   getMany: async ({ resource, ids }) => {
     const { data } = await httpClient.get(
-      `${apiUrl}/${resource}?${stringify({ id: String(ids) })}`
+      `${apiUrl}/${resource}?${stringify({ id__in: String(ids) })}`
     );
     return {
       data,

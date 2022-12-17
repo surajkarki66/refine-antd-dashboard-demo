@@ -6,12 +6,13 @@ import { MyBarChart, MyAreaChart } from "../../components/dashboard/index";
 export const DashboardPage: React.FC = () => {
   const API_URL = useApiUrl();
   const url = `${API_URL}/todos/todays-todo/`;
-  const { data, isLoading } = useCustom<ITodo>({ url, method: "get" });
+  const { isLoading } = useCustom<ITodo>({ url, method: "get" });
 
   return (
     <Row gutter={[16, 16]}>
       <Col md={24}>
         <Card
+          loading={isLoading}
           bodyStyle={{
             height: 300,
             padding: 0,
