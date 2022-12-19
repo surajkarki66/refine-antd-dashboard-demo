@@ -133,11 +133,18 @@ export const DjangoDataProvider = (
   },
 
   create: async ({ resource, variables }) => {
-    const url = `${apiUrl}/${resource}/`;
-    const { data } = await httpClient.post(url, variables);
-    return {
-      data,
-    };
+    try {
+      const url = `${apiUrl}/${resource}/`;
+      const { data } = await httpClient.post(url, variables);
+      return {
+        data,
+      };
+    } catch (error) {
+      return Promise.reject({
+        message: "Create Failed!",
+        name: "Error occurred",
+      });
+    }
   },
 
   update: async ({ resource, id, variables }) => {

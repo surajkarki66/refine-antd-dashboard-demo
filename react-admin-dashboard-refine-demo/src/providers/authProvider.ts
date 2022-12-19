@@ -55,15 +55,15 @@ export const authProvider: AuthProvider = {
           return Promise.resolve();
         } else {
           return Promise.reject({
-            name: "Forbidden!",
-            message: "You don't have a permission to access the dashboard.",
+            message: "Forbidden!",
+            name: "You don't have a permission to access the dashboard.",
           });
         }
       }
     } catch (error: any) {
       return Promise.reject({
-        name: "Login Failed!",
-        message: error.response.data.message,
+        name: "Login error occurred",
+        message: "Login failed!",
       });
     }
   },
@@ -79,8 +79,8 @@ export const authProvider: AuthProvider = {
       }
     } catch (error: any) {
       return Promise.reject({
-        name: "Register Failed!",
-        message: error.response.data.message,
+        message: "Register Failed!",
+        name: "Register error occurred",
       });
     }
   },
