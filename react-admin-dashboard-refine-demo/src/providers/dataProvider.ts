@@ -94,17 +94,19 @@ export const DjangoDataProvider = (
   }) => {
     const url = `${apiUrl}/${resource}`;
 
-    const { current = 1 } = pagination ?? {};
+    const { current = 1, pageSize = 7 } = pagination ?? {};
 
     const queryFilters = generateFilter(filters);
 
     const query: {
-      page?: number;
+      limit?: number;
+      offset?: number;
       _sort?: string;
       ordering?: string;
     } = hasPagination
       ? {
-          page: current,
+          limit: pageSize,
+          offset: (current - 1) * pageSize,
         }
       : {};
     const generatedSort = generateSort(sort);

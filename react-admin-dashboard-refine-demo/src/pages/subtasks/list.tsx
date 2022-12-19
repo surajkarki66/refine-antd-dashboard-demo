@@ -111,6 +111,7 @@ export const SubtaskList: React.FC<IResourceComponentsProps> = () => {
     },
   });
   const todoIds = tableProps?.dataSource?.map((item) => item.todo) ?? [];
+
   const { data, isLoading: isloading }: any = useMany<ITodo>({
     resource: "todos",
     ids: todoIds,
@@ -181,7 +182,7 @@ export const SubtaskList: React.FC<IResourceComponentsProps> = () => {
                   return (
                     <TextField
                       value={
-                        data?.data?.results.find(
+                        data?.data?.find(
                           (item: { id: any }) => item.id === value
                         )?.title
                       }

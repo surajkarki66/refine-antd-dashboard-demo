@@ -31,7 +31,7 @@ import { IUser } from "../../interfaces/index";
 export const UserList: React.FC<IResourceComponentsProps> = () => {
   const { tableProps, searchFormProps, sorter, filters } = useTable<IUser>({
     initialCurrent: 1,
-    initialPageSize: 10,
+    initialPageSize: 7,
     onSearch: (params: any) => {
       const filters: CrudFilters = [];
       const { search, created_at, updated_at, is_active } = params;

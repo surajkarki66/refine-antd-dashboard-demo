@@ -42,7 +42,7 @@ export const TodoCreate: React.FC<IResourceComponentsProps> = () => {
     },
   });
   console.log("Refetch", refetch);
-  const { formProps, saveButtonProps } = useForm<ITodo>({ redirect: "create" });
+  const { formProps, saveButtonProps } = useForm<ITodo>();
   const { selectProps: userSelectProps } = useSelect<IUser>({
     resource: "users",
     optionLabel: "username",
