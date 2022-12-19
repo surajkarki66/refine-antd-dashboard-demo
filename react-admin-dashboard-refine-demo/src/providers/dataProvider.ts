@@ -148,11 +148,18 @@ export const DjangoDataProvider = (
   },
 
   update: async ({ resource, id, variables }) => {
-    const url = `${apiUrl}/${resource}/${id}/`;
-    const { data } = await httpClient.patch(url, variables);
-    return {
-      data,
-    };
+    try {
+      const url = `${apiUrl}/${resource}/${id}/`;
+      const { data } = await httpClient.patch(url, variables);
+      return {
+        data,
+      };
+    } catch (error) {
+      return Promise.reject({
+        message: "Update Failed!",
+        name: "Error occurred",
+      });
+    }
   },
   getOne: async ({ resource, id }) => {
     const url = `${apiUrl}/${resource}/${id}`;
@@ -162,13 +169,20 @@ export const DjangoDataProvider = (
     };
   },
   deleteOne: async ({ resource, id, variables }) => {
-    const url = `${apiUrl}/${resource}/${id}/`;
-    const { data } = await httpClient.delete(url, {
-      data: variables,
-    });
-    return {
-      data,
-    };
+    try {
+      const url = `${apiUrl}/${resource}/${id}/`;
+      const { data } = await httpClient.delete(url, {
+        data: variables,
+      });
+      return {
+        data,
+      };
+    } catch (error) {
+      return Promise.reject({
+        message: "Delete Failed!",
+        name: "Error occurred",
+      });
+    }
   },
   getApiUrl: () => {
     return apiUrl;
