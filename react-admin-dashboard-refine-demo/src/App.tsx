@@ -4,12 +4,12 @@ import { Authenticated, Refine } from "@pankod/refine-core";
 import { RefineKbarProvider } from "@pankod/refine-kbar";
 import { liveProvider } from "@pankod/refine-ably";
 import {
-  notificationProvider,
   Layout,
   ReadyPage,
   ErrorComponent,
   ConfigProvider,
   Icons,
+  notificationProvider
 } from "@pankod/refine-antd";
 import { DjangoDataProvider } from "./providers/dataProvider";
 import "@pankod/refine-antd/dist/styles.min.css";
@@ -56,8 +56,8 @@ const App: React.FC = () => {
       <ConfigProvider direction={"ltr"}>
         <Refine
           dataProvider={DjangoDataProvider("http://127.0.0.1:8000/api")}
-          notificationProvider={notificationProvider}
           Layout={Layout}
+          notificationProvider={notificationProvider}
           ReadyPage={ReadyPage}
           catchAll={<ErrorComponent />}
           authProvider={authProvider}

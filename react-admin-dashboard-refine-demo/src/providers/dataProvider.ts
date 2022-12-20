@@ -135,27 +135,19 @@ export const DjangoDataProvider = (
   },
 
   create: async ({ resource, variables }) => {
-    try {
-      const url = `${apiUrl}/${resource}/`;
-      const { data } = await httpClient.post(url, variables);
-      return {
-        data,
-      };
-    } catch (error) {
-      return Promise.reject(error);
-    }
+    const url = `${apiUrl}/${resource}/`;
+    const { data } = await httpClient.post(url, variables);
+    return {
+      data,
+    };
   },
 
   update: async ({ resource, id, variables }) => {
-    try {
-      const url = `${apiUrl}/${resource}/${id}/`;
-      const { data } = await httpClient.patch(url, variables);
-      return {
-        data,
-      };
-    } catch (error) {
-      return Promise.reject(error);
-    }
+    const url = `${apiUrl}/${resource}/${id}/`;
+    const { data } = await httpClient.patch(url, variables);
+    return {
+      data,
+    };
   },
   getOne: async ({ resource, id }) => {
     const url = `${apiUrl}/${resource}/${id}`;
@@ -165,17 +157,13 @@ export const DjangoDataProvider = (
     };
   },
   deleteOne: async ({ resource, id, variables }) => {
-    try {
-      const url = `${apiUrl}/${resource}/${id}/`;
-      const { data } = await httpClient.delete(url, {
-        data: variables,
-      });
-      return {
-        data,
-      };
-    } catch (error) {
-      return Promise.reject(error);
-    }
+    const url = `${apiUrl}/${resource}/${id}/`;
+    const { data } = await httpClient.delete(url, {
+      data: variables,
+    });
+    return {
+      data,
+    };
   },
   getApiUrl: () => {
     return apiUrl;

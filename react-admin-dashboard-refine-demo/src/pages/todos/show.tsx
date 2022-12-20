@@ -7,8 +7,6 @@ import {
   Col,
   Card,
   Space,
-  Avatar,
-  Grid,
   List,
   Table,
   TextField,
@@ -21,20 +19,17 @@ import {
   Button,
   Radio,
   DeleteButton,
-  useDrawerForm,
-  CreateButton,
+  useForm,
 } from "@pankod/refine-antd";
 import { useShow, IResourceComponentsProps, useOne } from "@pankod/refine-core";
 
 import { ISubTask, IUser } from "../../interfaces/index";
 import { CreateSubtask } from "../../components/subtask";
 
-const { useBreakpoint } = Grid;
 const { Title, Text } = Typography;
 
 export const TodoShow: React.FC<IResourceComponentsProps> = () => {
   const { queryResult } = useShow();
-  const { xl } = useBreakpoint();
 
   const { data, isLoading } = queryResult;
   const record = data?.data;
@@ -73,71 +68,19 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
     syncWithLocation: false,
   });
   const user = userQueryResult.data?.data;
-  const {
-    drawerProps: createDrawerProps,
-    formProps: createFormProps,
-    saveButtonProps: createSaveButtonProps,
-    show: createShow,
-  } = useDrawerForm<ISubTask>({
-    action: "create",
-    resource: "subtasks",
-    redirect: "show",
-  });
+  const { formProps: createFormProps, saveButtonProps: createSaveButtonProps } =
+    useForm<ISubTask>({
+      action: "create",
+      resource: "subtasks",
+      redirect: "show",
+      submitOnEnter: true,
+    });
 
   return (
     <>
       {" "}
       <Row gutter={[16, 16]}>
-        <Col xl={6} lg={24} xs={24}>
-          <Card
-            bordered={false}
-            style={{ height: "100%" }}
-            loading={userQueryResult?.isLoading}
-          >
-            <Space
-              direction="vertical"
-              style={{ width: "100%", height: "100%" }}
-            >
-              <Space
-                direction="vertical"
-                style={{
-                  textAlign: "center",
-                  width: "100%",
-                }}
-              >
-                <Avatar size={120} src="https://i.pravatar.cc/150"></Avatar>
-                <Typography.Title level={3}>{user?.username}</Typography.Title>
-              </Space>
-              <Space
-                direction="vertical"
-                style={{
-                  width: "100%",
-                  textAlign: xl ? "unset" : "center",
-                }}
-              >
-                <Typography.Text>
-                  <Icons.MailOutlined /> {user?.email}
-                </Typography.Text>
-                <Typography.Text>
-                  {" "}
-                  {user?.is_active ? (
-                    <>
-                      <Icons.CheckOutlined />
-                      Active
-                    </>
-                  ) : (
-                    "Not active"
-                  )}
-                </Typography.Text>
-                <Typography.Text>
-                  <Icons.CalendarOutlined />{" "}
-                  {moment(user?.created_at).format("MMMM Do YYYY")}
-                </Typography.Text>
-              </Space>
-            </Space>
-          </Card>
-        </Col>
-        <Col xl={18} xs={24}>
+        <Col xl={16} xs={24}>
           <Show isLoading={isLoading}>
             <Title level={5}>Title</Title>
             <Text>{record?.title}</Text>
@@ -162,24 +105,47 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
             </Typography.Text>
           </Show>
         </Col>
+        <Col xl={8} lg={24} xs={24}>
+          <Card
+            bordered={false}
+            style={{ height: "100%" }}
+            loading={userQueryResult?.isLoading}
+          >
+            <Space
+              direction="vertical"
+              style={{ width: "100%", height: "100%" }}
+            >
+              <Space
+                direction="vertical"
+                style={{
+                  textAlign: "center",
+                  width: "100%",
+                }}
+              >
+                <Typography.Title level={3}>
+                  {" "}
+                  <Icons.UserOutlined />
+                  {user?.username}
+                </Typography.Title>
+              </Space>
+
+              <CreateSubtask
+                formProps={createFormProps}
+                saveButtonProps={createSaveButtonProps}
+                taskId={record?.id}
+              />
+            </Space>
+          </Card>
+        </Col>
+
         <Col xl={24} xs={24}>
           <List
+            canCreate={false}
             title="Subtasks"
             breadcrumb={null}
             headerProps={{
               title: <Typography.Text>Current Subtasks</Typography.Text>,
             }}
-            headerButtons={() => (
-              <>
-                <CreateButton
-                  onClick={() => {
-                    createShow();
-                  }}
-                >
-                  Add Subtask
-                </CreateButton>
-              </>
-            )}
           >
             <Form {...formProps}>
               <Table
@@ -291,12 +257,6 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
           </List>
         </Col>
       </Row>
-      <CreateSubtask
-        drawerProps={createDrawerProps}
-        formProps={createFormProps}
-        saveButtonProps={createSaveButtonProps}
-        taskId={record?.id}
-      />
     </>
   );
 };
