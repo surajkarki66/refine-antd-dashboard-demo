@@ -7,7 +7,6 @@ import {
   Button,
   Icons,
   Typography,
-  notification,
 } from "@pankod/refine-antd";
 import { BaseKey, useCreate } from "@pankod/refine-core";
 
@@ -34,7 +33,8 @@ export const CreateSubtask: React.FC<CreateSubtaskProps> = ({
       footerButtons={() => (
         <>
           <Button
-            onClick={async () => {
+            onClick={(e) => {
+              e.preventDefault();
               mutate(
                 {
                   resource: "subtasks",
@@ -44,25 +44,14 @@ export const CreateSubtask: React.FC<CreateSubtaskProps> = ({
                   },
                 },
                 {
-                  onError: (error, variables, context) => {
-                    console.error(error);
-                    notification.error({
-                      message: "Error !",
-                      description: "Something went wrong!",
-                    });
-                  },
+                  onError: (error, variables, context) => {},
                   onSuccess: (data, variables, context) => {
                     form?.resetFields();
-                    notification.success({
-                      message: "Created !",
-                      description: "Subtask is successfully added!",
-                    });
                   },
                 }
               );
             }}
             type="primary"
-            htmlType="submit"
             icon={<Icons.SaveFilled />}
           >
             Save
@@ -70,7 +59,7 @@ export const CreateSubtask: React.FC<CreateSubtaskProps> = ({
         </>
       )}
     >
-      <Form {...formProps} layout="vertical">
+      <Form form={form} layout="vertical">
         <Form.Item
           label="Title"
           name="title"
