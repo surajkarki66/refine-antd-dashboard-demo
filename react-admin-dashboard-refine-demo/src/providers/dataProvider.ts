@@ -142,10 +142,7 @@ export const DjangoDataProvider = (
         data,
       };
     } catch (error) {
-      return Promise.reject({
-        message: "Create Failed!",
-        name: "Error occurred",
-      });
+      return Promise.reject(error);
     }
   },
 
@@ -157,10 +154,7 @@ export const DjangoDataProvider = (
         data,
       };
     } catch (error) {
-      return Promise.reject({
-        message: "Update Failed!",
-        name: "Error occurred",
-      });
+      return Promise.reject(error);
     }
   },
   getOne: async ({ resource, id }) => {
@@ -180,10 +174,7 @@ export const DjangoDataProvider = (
         data,
       };
     } catch (error) {
-      return Promise.reject({
-        message: "Delete Failed!",
-        name: "Error occurred",
-      });
+      return Promise.reject(error);
     }
   },
   getApiUrl: () => {
