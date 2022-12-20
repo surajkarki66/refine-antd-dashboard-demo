@@ -1,85 +1,88 @@
 import {
   Create,
-  Drawer,
-  DrawerProps,
   Form,
   FormProps,
   Input,
   ButtonProps,
-  Grid,
   Button,
   Icons,
+  Typography,
+  notification,
 } from "@pankod/refine-antd";
 import { BaseKey, useCreate } from "@pankod/refine-core";
 
 type CreateSubtaskProps = {
-  drawerProps: DrawerProps;
   formProps: FormProps;
   saveButtonProps: ButtonProps;
   taskId?: BaseKey;
 };
 
 export const CreateSubtask: React.FC<CreateSubtaskProps> = ({
-  drawerProps,
   formProps,
   taskId,
 }) => {
-  const breakpoint = Grid.useBreakpoint();
   const { mutate } = useCreate();
   const { form } = formProps;
 
   return (
-    <Drawer
-      {...drawerProps}
-      width={breakpoint.sm ? "500px" : "100%"}
-      bodyStyle={{ padding: 0 }}
-      zIndex={1001}
-    >
-      <Create
-        resource="subtasks"
-        breadcrumb={null}
-        actionButtons={
-          <>
-            <Button
-              onClick={() => {
-                mutate(
-                  {
-                    resource: "subtasks",
-                    values: {
-                      title: form?.getFieldValue("title"),
-                      todo: taskId,
-                    },
+    <Create
+      resource="subtasks"
+      breadcrumb={null}
+      headerProps={{
+        title: <Typography.Text>Add Subtask</Typography.Text>,
+      }}
+      footerButtons={() => (
+        <>
+          <Button
+            onClick={async () => {
+              mutate(
+                {
+                  resource: "subtasks",
+                  values: {
+                    title: form?.getFieldValue("title"),
+                    todo: taskId,
                   },
-                  {
-                    onError: (error, variables, context) => {},
-                    onSuccess: (data, variables, context) => {
-                      form?.resetFields(["title"]);
-                    },
-                  }
-                );
-              }}
-              type="primary"
-              icon={<Icons.SaveFilled />}
-            >
-              Save
-            </Button>
-          </>
-        }
-      >
-        <Form {...formProps} layout="vertical">
-          <Form.Item
-            label="Title"
-            name="title"
-            rules={[
-              {
-                required: true,
-              },
-            ]}
+                },
+                {
+                  onError: (error, variables, context) => {
+                    console.error(error);
+                    notification.error({
+                      message: "Error !",
+                      description: "Something went wrong!",
+                    });
+                  },
+                  onSuccess: (data, variables, context) => {
+                    form?.resetFields();
+                    notification.success({
+                      message: "Created !",
+                      description: "Subtask is successfully added!",
+                    });
+                  },
+                }
+              );
+            }}
+            type="primary"
+            htmlType="submit"
+            icon={<Icons.SaveFilled />}
           >
-            <Input />
-          </Form.Item>
-        </Form>
-      </Create>
-    </Drawer>
+            Save
+          </Button>
+        </>
+      )}
+    >
+      <Form {...formProps} layout="vertical">
+        <Form.Item
+          label="Title"
+          name="title"
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Input prefix={<Icons.FileTextOutlined />} allowClear size="large" />
+        </Form.Item>
+      </Form>
+    </Create>
   );
 };
