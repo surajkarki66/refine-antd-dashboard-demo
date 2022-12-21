@@ -19,12 +19,17 @@ import {
   Button,
   Radio,
   DeleteButton,
-  useForm,
+  useDrawerForm,
+  CreateButton,
+  EditButton,
+  Grid,
+  Avatar,
 } from "@pankod/refine-antd";
 import { useShow, IResourceComponentsProps, useOne } from "@pankod/refine-core";
 
 import { ISubTask, IUser } from "../../interfaces/index";
 import { CreateSubtask } from "../../components/subtask";
+import { EditSubtask } from "../../components/subtask/edit";
 
 const { Title, Text } = Typography;
 
@@ -33,7 +38,7 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
 
   const { data, isLoading } = queryResult;
   const record = data?.data;
-
+  const { useBreakpoint } = Grid;
   const userQueryResult = useOne<IUser>({
     resource: "users",
     id: record?.owner,
@@ -68,19 +73,36 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
     syncWithLocation: false,
   });
   const user = userQueryResult.data?.data;
-  const { formProps: createFormProps, saveButtonProps: createSaveButtonProps } =
-    useForm<ISubTask>({
-      action: "create",
-      resource: "subtasks",
-      redirect: "show",
-      submitOnEnter: true,
-    });
+  const {
+    formProps: createFormProps,
+    saveButtonProps: createSaveButtonProps,
+    drawerProps,
+    show: createShow,
+    close: closeCreate,
+  } = useDrawerForm<ISubTask>({
+    action: "create",
+    resource: "subtasks",
+    redirect: false,
+    submitOnEnter: false,
+  });
 
+  const {
+    drawerProps: editDrawerProps,
+    formProps: editFormProps,
+    saveButtonProps: editSaveButtonProps,
+    show: editShow,
+  } = useDrawerForm<ISubTask>({
+    action: "edit",
+    resource: "subtasks",
+    redirect: false,
+    submitOnEnter: false,
+  });
+  const { xl } = useBreakpoint();
   return (
     <>
       {" "}
       <Row gutter={[16, 16]}>
-        <Col xl={16} xs={24}>
+        <Col xl={18} xs={24}>
           <Show isLoading={isLoading}>
             <Title level={5}>Title</Title>
             <Text>{record?.title}</Text>
@@ -105,7 +127,7 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
             </Typography.Text>
           </Show>
         </Col>
-        <Col xl={8} lg={24} xs={24}>
+        <Col xl={6} lg={24} xs={24}>
           <Card
             bordered={false}
             style={{ height: "100%" }}
@@ -122,30 +144,53 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
                   width: "100%",
                 }}
               >
-                <Typography.Title level={3}>
-                  {" "}
-                  <Icons.UserOutlined />
-                  {user?.username}
-                </Typography.Title>
+                <Avatar size={120} src="https://i.pravatar.cc/150"></Avatar>
+                <Typography.Title level={3}>{user?.username}</Typography.Title>
               </Space>
-
-              <CreateSubtask
-                formProps={createFormProps}
-                saveButtonProps={createSaveButtonProps}
-                taskId={record?.id}
-              />
+              <Space
+                direction="vertical"
+                style={{
+                  width: "100%",
+                  textAlign: xl ? "unset" : "center",
+                }}
+              >
+                <Typography.Text>
+                  <Icons.MailOutlined /> {user?.email}
+                </Typography.Text>
+                <Typography.Text>
+                  {" "}
+                  {user?.is_active ? (
+                    <>
+                      <Icons.CheckOutlined />
+                      Active
+                    </>
+                  ) : (
+                    "Not active"
+                  )}
+                </Typography.Text>
+                <Typography.Text>
+                  <Icons.CalendarOutlined />{" "}
+                  {moment(user?.created_at).format("MMMM Do YYYY")}
+                </Typography.Text>
+              </Space>
             </Space>
           </Card>
         </Col>
 
         <Col xl={24} xs={24}>
           <List
-            canCreate={false}
             title="Subtasks"
             breadcrumb={null}
             headerProps={{
               title: <Typography.Text>Current Subtasks</Typography.Text>,
             }}
+            headerButtons={() => (
+              <>
+                <CreateButton onClick={() => createShow(record?.id)}>
+                  Add subtask
+                </CreateButton>
+              </>
+            )}
           >
             <Form {...formProps}>
               <Table
@@ -242,6 +287,12 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
                     return (
                       <Space>
                         {" "}
+                        <EditButton
+                          onClick={() => editShow(record.id)}
+                          size="small"
+                          recordItemId={record.id}
+                          hideText
+                        />
                         <DeleteButton
                           resourceNameOrRouteName="subtasks"
                           size="small"
@@ -257,6 +308,18 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
           </List>
         </Col>
       </Row>
+      <CreateSubtask
+        formProps={createFormProps}
+        drawerProps={drawerProps}
+        saveButtonProps={createSaveButtonProps}
+        taskId={record?.id}
+        closeCreate={closeCreate}
+      />
+      <EditSubtask
+        formProps={editFormProps}
+        drawerProps={editDrawerProps}
+        saveButtonProps={editSaveButtonProps}
+      />
     </>
   );
 };
