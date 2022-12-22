@@ -1,12 +1,12 @@
 import datetime
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView, RetrieveAPIView
+from rest_framework.generics import ListCreateAPIView, UpdateAPIView, ListAPIView, RetrieveAPIView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework import filters
 from authentication.jwtauthenticate import JWTAuthentication
 from django_filters.rest_framework import DjangoFilterBackend
 
 
-from todos.serializers import TodoSerializer
+from todos.serializers import TodoSerializer, TodoDetailsSerializer
 from todos.models import Todo
 from tags.models import Tag
 
@@ -46,7 +46,17 @@ class ListCreateTodoAPIView(ListCreateAPIView):
         return Todo.objects.filter()
 
 
-class DetailTodoAPIView(RetrieveUpdateDestroyAPIView):
+class DetailTodoAPIView(RetrieveAPIView):
+    serializer_class = TodoDetailsSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated, IsAdminUser]
+    lookup_field = "id"
+
+    def get_queryset(self):
+        return Todo.objects.filter()
+
+
+class UpdateTodoAPIView(UpdateAPIView):
     serializer_class = TodoSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, IsAdminUser]
