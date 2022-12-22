@@ -24,12 +24,14 @@ import {
   EditButton,
   Grid,
   Avatar,
+  Tag
 } from "@pankod/refine-antd";
 import { useShow, IResourceComponentsProps, useOne } from "@pankod/refine-core";
 
-import { ISubTask, IUser } from "../../interfaces/index";
+import { ISubTask, IUser, ITag } from "../../interfaces/index";
 import { CreateSubtask } from "../../components/subtask";
 import { EditSubtask } from "../../components/subtask/edit";
+import { randomHexColor } from "../../utility/randomRGBColor";
 
 const { Title, Text } = Typography;
 
@@ -39,9 +41,10 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
   const { data, isLoading } = queryResult;
   const record = data?.data;
   const { useBreakpoint } = Grid;
+
   const userQueryResult = useOne<IUser>({
     resource: "users",
-    id: record?.owner,
+    id: record?.owner.id,
   });
   const {
     tableProps,
@@ -108,6 +111,9 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
             <Text>{record?.title}</Text>
             <Title level={5}>Description</Title>
             <Text>{record?.desc}</Text>
+            <Title level={5}>Tags</Title>
+            {record?.tags.map((tag: ITag)=> <Tag color={randomHexColor()}>{tag.name}</Tag>)}
+            <Text></Text>
             <Title level={5}>Status</Title>
             <Typography.Text>
               {" "}
@@ -120,7 +126,7 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
                 "Not completed"
               )}
             </Typography.Text>
-            <Title level={5}>Joined</Title>
+            <Title level={5}>Created</Title>
             <Typography.Text>
               <Icons.CalendarOutlined />{" "}
               {moment(record?.created_at).format("MMMM Do YYYY")}
