@@ -31,6 +31,10 @@ p, admin, subtasks, (list)|(create)
 p, admin, subtasks/*, (edit)|(show)|(delete)
 p, admin, subtasks/*, field
 
+p, admin, tags, (list)|(create)
+p, admin, tags/*, (edit)|(show)|(delete)
+p, admin, tags/*, field
+
 p, editor, dashboard, list
 
 p, editor, todos, (list)|(create)
@@ -38,6 +42,10 @@ p, editor, todos/*, (edit)|(show)
 
 p, editor, subtasks, (list)|(create)
 p, editor, subtasks/*, (edit)|(show)
+
+
+p, editor, tags, (list)|(create)
+p, editor, tags/*, (edit)|(show)
 
 p, editor, users, list
 

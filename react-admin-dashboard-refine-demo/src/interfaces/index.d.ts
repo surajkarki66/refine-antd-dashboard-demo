@@ -44,3 +44,10 @@ export interface ISubTask {
   created_at: Date;
   updated_at: Date;
 }
+
+export interface ITag {
+  id: BaseKey;
+  name: string;
+  created_at: Date;
+  updated_at: Date;
+}

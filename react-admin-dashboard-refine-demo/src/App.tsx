@@ -37,6 +37,7 @@ import {
   CustomFooter,
   CustomPage,
 } from "./pages/custom/index";
+import { TagCreate, TagShow, TagList } from "./pages/tags";
 
 const { RouterComponent } = routerProvider;
 
@@ -152,6 +153,15 @@ const App: React.FC = () => {
               create: SubtaskCreate,
               canDelete: true,
               icon: <Icons.DownSquareOutlined />,
+            },
+            {
+              name: "tags",
+              // parentName: "Tables",
+              list: TagList,
+              create: TagCreate,
+              show: TagShow,
+              canDelete: true,
+              icon: <Icons. TagsOutlined/>,
             },
           ]}
           Sider={CustomSider}
