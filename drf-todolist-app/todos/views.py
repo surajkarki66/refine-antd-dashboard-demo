@@ -1,11 +1,14 @@
+import datetime
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView, RetrieveAPIView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework import filters
 from authentication.jwtauthenticate import JWTAuthentication
-from todos.serializers import TodoSerializer, SubTaskSerializer
-from todos.models import Todo
-import datetime
 from django_filters.rest_framework import DjangoFilterBackend
+
+
+from todos.serializers import TodoSerializer
+from todos.models import Todo
+from tags.models import Tag
 
 
 class ListCreateTodoAPIView(ListCreateAPIView):
@@ -30,8 +33,14 @@ class ListCreateTodoAPIView(ListCreateAPIView):
     ordering_fields = ["id", "title", "created_at", "updated_at", "owner"]
 
     def perform_create(self, serializer):
-        print(self.request.user)
-        return serializer.save(owner=self.request.user)
+        data = self.request.data
+        new_todo = Todo.objects.create(title=data["title"], desc=data["desc"], owner=self.request.user)
+
+        for tag_id in data["tags"]:
+            tag_obj = Tag.objects.get(id=tag_id)
+            new_todo.tags.add(tag_obj)
+
+        return serializer.save()
 
     def get_queryset(self):
         return Todo.objects.filter()
@@ -44,6 +53,21 @@ class DetailTodoAPIView(RetrieveUpdateDestroyAPIView):
 
     lookup_field = "id"
 
+    def perform_update(self, serializer):
+        data = self.request.data
+        todo_object = Todo.objects.get(id=self.kwargs["id"])
+
+        todo_object.title = data["title"]
+        todo_object.desc = data["desc"]
+        todo_object.owner = self.request.user
+      
+        for tag_id in data["tags"]:
+            tag_obj = Tag.objects.get(id=tag_id)
+            todo_object.tags.add(tag_obj)
+
+        return serializer.save()
+
+    
     def get_queryset(self):
         return Todo.objects.filter()
 

@@ -2,6 +2,7 @@ from distutils.archive_util import make_zipfile
 from django.db import models
 
 from helpers.models import TrackingModel
+from tags.models import Tag
 from authentication.models import User
 
 class Todo(TrackingModel):
@@ -9,6 +10,7 @@ class Todo(TrackingModel):
     desc    = models.TextField()
     is_completed = models.BooleanField(default=False)
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE)
+    tags = models.ManyToManyField(Tag)
 
     def __str__(self):
         return self.title

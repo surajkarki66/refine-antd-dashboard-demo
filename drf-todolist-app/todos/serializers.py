@@ -11,18 +11,9 @@ class TodoSerializer(ModelSerializer):
             "desc",
             "is_completed",
             "owner",
+            "tags",
             "created_at",
             "updated_at",
         )
+        depth = 0
 
-class SubTaskSerializer(ModelSerializer):
-    class Meta:
-        model = Todo
-        fields = (
-            "id",
-            "title",
-            "is_completed",
-            "todo",
-            "created_at",
-            "updated_at",
-        )
