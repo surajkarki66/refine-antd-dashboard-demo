@@ -1,5 +1,5 @@
 import datetime
-from rest_framework.generics import ListCreateAPIView, UpdateAPIView, ListAPIView, RetrieveAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, ListCreateAPIView, UpdateAPIView, ListAPIView, RetrieveAPIView, DestroyAPIView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework import filters
 from authentication.jwtauthenticate import JWTAuthentication
@@ -11,8 +11,8 @@ from todos.models import Todo
 from tags.models import Tag
 
 
-class ListCreateTodoAPIView(ListCreateAPIView):
-    serializer_class = TodoSerializer
+class ListTodoAPIView(ListAPIView):
+    serializer_class = TodoDetailsSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated,]
     filter_backends = [
@@ -31,6 +31,14 @@ class ListCreateTodoAPIView(ListCreateAPIView):
     }
     search_fields = ["id", "title", "desc"]
     ordering_fields = ["id", "title", "created_at", "updated_at", "owner"]
+
+    def get_queryset(self):
+        return Todo.objects.filter()
+
+class CreateTodoAPIView(CreateAPIView):
+    serializer_class = TodoSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated,]
 
     def perform_create(self, serializer):
         data = self.request.data
@@ -78,6 +86,16 @@ class UpdateTodoAPIView(UpdateAPIView):
         return serializer.save()
 
     
+    def get_queryset(self):
+        return Todo.objects.filter()
+
+class DeleteTodoAPIView(DestroyAPIView):
+    serializer_class = TodoSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated, IsAdminUser]
+
+    lookup_field = "id"
+
     def get_queryset(self):
         return Todo.objects.filter()
 

@@ -3,7 +3,10 @@ from .models import User
 from rest_framework.generics import (
     GenericAPIView,
     ListAPIView,
-    RetrieveUpdateDestroyAPIView,
+    RetrieveAPIView,
+    UpdateAPIView,
+    DestroyAPIView,
+    DestroyAPIView
 )
 from rest_framework.response import Response
 from rest_framework import status, permissions
@@ -41,7 +44,27 @@ class ListUser(ListAPIView):
         return User.objects.all()
 
 
-class DetailUserAPIView(RetrieveUpdateDestroyAPIView):
+class DetailUserAPIView(RetrieveAPIView):
+    serializer_class = UserSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.IsAuthenticated, permissions.IsAdminUser]
+
+    lookup_field = "id"
+
+    def get_queryset(self):
+        return User.objects.all()
+
+class UpdateUserAPIView(UpdateAPIView):
+    serializer_class = UserSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.IsAuthenticated, permissions.IsAdminUser]
+
+    lookup_field = "id"
+
+    def get_queryset(self):
+        return User.objects.all()
+
+class DeleteUserAPIView(DestroyAPIView):
     serializer_class = UserSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [permissions.IsAuthenticated, permissions.IsAdminUser]

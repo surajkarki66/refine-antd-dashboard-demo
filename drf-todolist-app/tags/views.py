@@ -1,4 +1,4 @@
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView, RetrieveAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework import filters
 from authentication.jwtauthenticate import JWTAuthentication
@@ -9,7 +9,16 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 
 
-class ListCreateTagAPIView(ListCreateAPIView):
+class CreateTagAPIView(CreateAPIView):
+    serializer_class = TagSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated,]
+
+    def perform_create(self, serializer):
+        return serializer.save()
+
+
+class ListTagAPIView(ListAPIView):
     serializer_class = TagSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated,]
@@ -29,14 +38,31 @@ class ListCreateTagAPIView(ListCreateAPIView):
     search_fields = ["id", "name"]
     ordering_fields = ["id", "name", "created_at", "updated_at"]
 
-    def perform_create(self, serializer):
-        return serializer.save()
-
     def get_queryset(self):
         return Tag.objects.filter()
 
 
-class DetailTagAPIView(RetrieveUpdateDestroyAPIView):
+class DetailTagAPIView(RetrieveAPIView):
+    serializer_class = TagSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated, IsAdminUser]
+
+    lookup_field = "id"
+
+    def get_queryset(self):
+        return Tag.objects.filter()
+
+class UpdateTagAPIView(UpdateAPIView):
+    serializer_class = TagSerializer
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated, IsAdminUser]
+
+    lookup_field = "id"
+
+    def get_queryset(self):
+        return Tag.objects.filter()
+
+class DeleteTagAPIView(DestroyAPIView):
     serializer_class = TagSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, IsAdminUser]
