@@ -15,9 +15,10 @@ class TodoSerializer(ModelSerializer):
             "created_at",
             "updated_at",
         )
+
         depth = 0
 
-class TodoDetailsSerializer(ModelSerializer):
+class TodoListSerializer(TodoSerializer):
     class Meta:
         model = Todo
         fields = (
@@ -30,5 +31,21 @@ class TodoDetailsSerializer(ModelSerializer):
             "created_at",
             "updated_at",
         )
+
         depth = 1
 
+class TodoDetailSerializer(TodoSerializer):
+    class Meta:
+        model = Todo
+        fields = (
+            "id",
+            "title",
+            "desc",
+            "is_completed",
+            "owner",
+            "tags",
+            "created_at",
+            "updated_at",
+        )
+
+        depth = 1

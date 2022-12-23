@@ -6,13 +6,13 @@ from authentication.jwtauthenticate import JWTAuthentication
 from django_filters.rest_framework import DjangoFilterBackend
 
 
-from todos.serializers import TodoSerializer, TodoDetailsSerializer
+from todos.serializers import TodoSerializer, TodoDetailSerializer, TodoListSerializer
 from todos.models import Todo
 from tags.models import Tag
 
 
 class ListTodoAPIView(ListAPIView):
-    serializer_class = TodoDetailsSerializer
+    serializer_class = TodoListSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated,]
     filter_backends = [
@@ -55,7 +55,7 @@ class CreateTodoAPIView(CreateAPIView):
 
 
 class DetailTodoAPIView(RetrieveAPIView):
-    serializer_class = TodoDetailsSerializer
+    serializer_class = TodoDetailSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, IsAdminUser]
     lookup_field = "id"
