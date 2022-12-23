@@ -24,11 +24,16 @@ import {
   EditButton,
   Grid,
   Avatar,
-  Tag
+  Tag,
 } from "@pankod/refine-antd";
-import { useShow, IResourceComponentsProps, useOne } from "@pankod/refine-core";
+import {
+  useShow,
+  IResourceComponentsProps,
+  useOne,
+  useMany,
+} from "@pankod/refine-core";
 
-import { ISubTask, IUser, ITag } from "../../interfaces/index";
+import { ISubTask, IUser, ITag, ITodo } from "../../interfaces/index";
 import { CreateSubtask } from "../../components/subtask";
 import { EditSubtask } from "../../components/subtask/edit";
 import { randomHexColor } from "../../utility/randomRGBColor";
@@ -37,14 +42,14 @@ const { Title, Text } = Typography;
 
 export const TodoShow: React.FC<IResourceComponentsProps> = () => {
   const { queryResult } = useShow();
-
   const { data, isLoading } = queryResult;
   const record = data?.data;
+
   const { useBreakpoint } = Grid;
 
   const userQueryResult = useOne<IUser>({
     resource: "users",
-    id: record?.owner.id,
+    id: record?.owner,
   });
   const {
     tableProps,
@@ -101,6 +106,14 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
     submitOnEnter: false,
   });
   const { xl } = useBreakpoint();
+  const { data: TagData, isLoading: isloading }: any = useMany<ITag>({
+    resource: "tags",
+    ids: record?.tags,
+    queryOptions: {
+      enabled: record?.tags.length > 0,
+    },
+  });
+
   return (
     <>
       {" "}
@@ -112,7 +125,9 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
             <Title level={5}>Description</Title>
             <Text>{record?.desc}</Text>
             <Title level={5}>Tags</Title>
-            {record?.tags.map((tag: ITag)=> <Tag color={randomHexColor()}>{tag.name}</Tag>)}
+            {TagData?.data.map((tag: ITag) => (
+              <Tag color={randomHexColor()}>{tag.name}</Tag>
+            ))}
             <Text></Text>
             <Title level={5}>Status</Title>
             <Typography.Text>

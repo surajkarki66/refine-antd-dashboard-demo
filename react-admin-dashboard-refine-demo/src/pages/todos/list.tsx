@@ -20,19 +20,20 @@ import {
   Card,
   ExportButton,
   useDrawerForm,
-  TextField,
+  Popover,
+  Tag,
 } from "@pankod/refine-antd";
 import {
   CrudFilters,
   useExport,
   IResourceComponentsProps,
   usePermissions,
-  useMany,
 } from "@pankod/refine-core";
 import { useState } from "react";
 
 import { EditTodo } from "../../components/todo/index";
-import { ITodo, IUser } from "../../interfaces/index";
+import { ITag, ITodo } from "../../interfaces/index";
+import { randomHexColor } from "../../utility/randomRGBColor";
 
 export const TodoList: React.FC<IResourceComponentsProps> = () => {
   const [deprecated, setDeprecated] = useState<
@@ -125,6 +126,7 @@ export const TodoList: React.FC<IResourceComponentsProps> = () => {
   } = useDrawerForm<ITodo>({
     action: "edit",
     resource: "todos",
+    metaData: {populate: true},
     redirect: false,
     liveMode: "manual",
     onLiveEvent: (event) => {
@@ -133,14 +135,7 @@ export const TodoList: React.FC<IResourceComponentsProps> = () => {
       }
     },
   });
-  const userIds = tableProps?.dataSource?.map((item) => item.owner) ?? [];
-  const { data, isLoading: isloading }: any = useMany<IUser>({
-    resource: "users",
-    ids: userIds,
-    queryOptions: {
-      enabled: userIds.length > 0,
-    },
-  });
+
   return (
     <>
       <Row gutter={[16, 16]}>
@@ -172,24 +167,26 @@ export const TodoList: React.FC<IResourceComponentsProps> = () => {
                 sorter
                 showSorterTooltip
               />
-              <Table.Column
-                dataIndex={["owner"]}
-                title="Owner"
-                render={(value) => {
-                  if (isloading) {
-                    return <TextField value="Loading..." />;
-                  }
-
-                  return (
-                    <TextField
-                      value={
-                        data?.data?.find(
-                          (item: { id: any }) => item.id === value
-                        )?.username
-                      }
-                    />
-                  );
-                }}
+              <Table.Column dataIndex={["owner", "username"]} title="Owner" />
+              <Table.Column<ITodo>
+                key="tags"
+                dataIndex="tags"
+                title="Tags"
+                render={(_, record) => (
+                  <Popover
+                    content={
+                      <>
+                        {record.tags.map((tag) => (
+                          <Tag color={randomHexColor()}>{tag.name}</Tag>
+                        ))}
+                      </>
+                    }
+                    title="Tags"
+                    trigger="hover"
+                  >
+                    <Tag color={randomHexColor()}>{record.tags[0]?.name}</Tag>
+                  </Popover>
+                )}
               />
               <Table.Column
                 dataIndex="is_completed"

@@ -15,6 +15,7 @@ import {
 import { useState } from "react";
 
 import {
+  ITag,
   ITodo,
   IUser,
   TodoUniqueCheckRequestQuery,
@@ -38,6 +39,24 @@ export const TodoCreate: React.FC<IResourceComponentsProps> = () => {
     },
   });
   console.log("Refetch", refetch);
+  const { selectProps: tagSelectProps } = useSelect<ITag>({
+    resource: "tags",
+    optionLabel: "name",
+    optionValue: "id",
+    sort: [
+      {
+        field: "name",
+        order: "asc",
+      },
+    ],
+    onSearch: (value) => [
+      {
+        field: "search",
+        operator: "contains",
+        value,
+      },
+    ],
+  });
   const { formProps, saveButtonProps } = useForm<ITodo>();
   const { selectProps: userSelectProps } = useSelect<IUser>({
     resource: "users",
@@ -101,7 +120,17 @@ export const TodoCreate: React.FC<IResourceComponentsProps> = () => {
         >
           <Input.TextArea rows={3} />
         </Form.Item>
-
+        <Form.Item
+          label="Tag"
+          name={["tags"]}
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Select showSearch={true} mode="tags" {...tagSelectProps} />
+        </Form.Item>
         <Form.Item
           label="Owner"
           name={["owner"]}

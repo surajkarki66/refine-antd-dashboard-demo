@@ -11,8 +11,11 @@ import {
   Alert,
   RefreshButton,
   ListButton,
+  Select,
+  useSelect
 } from "@pankod/refine-antd";
 import { usePermissions } from "@pankod/refine-core";
+import { ITag } from "../../interfaces";
 
 type EditTodoProps = {
   drawerProps: DrawerProps;
@@ -34,6 +37,25 @@ export const EditTodo: React.FC<EditTodoProps> = ({
   const breakpoint = Grid.useBreakpoint();
   const { data: permissionsData } = usePermissions();
 
+  const { selectProps: tagSelectProps } = useSelect<ITag>({
+    resource: "tags",
+    optionLabel: "name",
+    optionValue: "id",
+    sort: [
+      {
+        field: "name",
+        order: "asc",
+      },
+    ],
+    onSearch: (value) => [
+      {
+        field: "search",
+        operator: "contains",
+        value,
+      },
+    ],
+  });
+ 
   return (
     <Drawer
       {...drawerProps}
@@ -87,6 +109,18 @@ export const EditTodo: React.FC<EditTodoProps> = ({
           >
             <Input.TextArea rows={6} />
           </Form.Item>
+          <Form.Item
+          label="Tag"
+          name={["tags"]}
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+          
+        >
+          <Select mode="tags" {...tagSelectProps} />
+        </Form.Item>
           <Form.Item label="Is completed" name="is_completed">
             <Radio.Group>
               <Radio value={true}>Completed</Radio>

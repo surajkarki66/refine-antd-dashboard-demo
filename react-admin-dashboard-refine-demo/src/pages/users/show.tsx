@@ -19,8 +19,11 @@ import {
   DateField,
   useTable,
   Typography,
+  Popover,
+  Tag,
 } from "@pankod/refine-antd";
 import { ITodo } from "../../interfaces/index";
+import { randomHexColor } from "../../utility/randomRGBColor";
 
 const { useBreakpoint } = Grid;
 
@@ -126,6 +129,26 @@ export const UserShow: React.FC<IResourceComponentsProps> = () => {
                 title="Title"
                 render={(value) => <TextField value={value} />}
                 sorter
+              />
+              <Table.Column<ITodo>
+                key="tags"
+                dataIndex="tags"
+                title="Tags"
+                render={(_, record) => (
+                  <Popover
+                    content={
+                      <>
+                        {record.tags.map((tag) => (
+                          <Tag color={randomHexColor()}>{tag.name}</Tag>
+                        ))}
+                      </>
+                    }
+                    title="Tags"
+                    trigger="hover"
+                  >
+                    <Tag color={randomHexColor()}>{record.tags[0]?.name}</Tag>
+                  </Popover>
+                )}
               />
               <Table.Column
                 key="is_completed"

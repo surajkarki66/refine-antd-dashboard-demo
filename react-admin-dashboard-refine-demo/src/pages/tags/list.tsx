@@ -16,14 +16,12 @@ import {
   Col,
   Card,
   DeleteButton,
-  EditButton,
   ShowButton,
 } from "@pankod/refine-antd";
 import {
   useExport,
   IResourceComponentsProps,
   CrudFilters,
-  useMany,
 } from "@pankod/refine-core";
 
 import { ITag } from "../../interfaces/index";

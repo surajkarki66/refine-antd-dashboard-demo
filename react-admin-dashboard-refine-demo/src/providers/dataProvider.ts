@@ -135,7 +135,7 @@ export const DjangoDataProvider = (
   },
 
   create: async ({ resource, variables }) => {
-    const url = `${apiUrl}/${resource}/`;
+    const url = `${apiUrl}/${resource}/create/`;
     const { data } = await httpClient.post(url, variables);
     return {
       data,
@@ -143,7 +143,7 @@ export const DjangoDataProvider = (
   },
 
   update: async ({ resource, id, variables }) => {
-    const url = `${apiUrl}/${resource}/${id}/`;
+    const url = `${apiUrl}/${resource}/update/${id}/`;
     const { data } = await httpClient.patch(url, variables);
     return {
       data,
@@ -157,7 +157,7 @@ export const DjangoDataProvider = (
     };
   },
   deleteOne: async ({ resource, id, variables }) => {
-    const url = `${apiUrl}/${resource}/${id}/`;
+    const url = `${apiUrl}/${resource}/delete/${id}/`;
     const { data } = await httpClient.delete(url, {
       data: variables,
     });

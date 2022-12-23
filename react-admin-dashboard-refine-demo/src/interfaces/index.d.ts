@@ -5,7 +5,8 @@ export interface ITodo {
   title: string;
   desc: string;
   is_completed: boolean;
-  owner: BaseKey;
+  owner: IUser;
+  tags: ITag[];
   created_at: Date;
   updated_at: Date;
 }
