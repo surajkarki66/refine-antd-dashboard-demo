@@ -55,7 +55,7 @@ class CreateTodoAPIView(CreateAPIView):
 
 
 class DetailTodoAPIView(RetrieveAPIView):
-    serializer_class = TodoDetailSerializer
+    serializer_class = TodoSerializer
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated, IsAdminUser]
     lookup_field = "id"
