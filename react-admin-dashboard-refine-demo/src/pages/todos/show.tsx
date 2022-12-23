@@ -33,7 +33,7 @@ import {
   useMany,
 } from "@pankod/refine-core";
 
-import { ISubTask, IUser, ITag, ITodo } from "../../interfaces/index";
+import { ISubTask, IUser, ITag } from "../../interfaces/index";
 import { CreateSubtask } from "../../components/subtask";
 import { EditSubtask } from "../../components/subtask/edit";
 import { randomHexColor } from "../../utility/randomRGBColor";
@@ -106,7 +106,7 @@ export const TodoShow: React.FC<IResourceComponentsProps> = () => {
     submitOnEnter: false,
   });
   const { xl } = useBreakpoint();
-  const { data: TagData, isLoading: isloading }: any = useMany<ITag>({
+  const { data: TagData }: any = useMany<ITag>({
     resource: "tags",
     ids: record?.tags,
     queryOptions: {

@@ -32,7 +32,7 @@ import {
 import { useState } from "react";
 
 import { EditTodo } from "../../components/todo/index";
-import { ITag, ITodo } from "../../interfaces/index";
+import { ITodo } from "../../interfaces/index";
 import { randomHexColor } from "../../utility/randomRGBColor";
 
 export const TodoList: React.FC<IResourceComponentsProps> = () => {

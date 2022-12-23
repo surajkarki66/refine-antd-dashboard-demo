@@ -2,7 +2,6 @@ import {
   Create,
   Form,
   Input,
-  Select,
   useForm,
 } from "@pankod/refine-antd";
 

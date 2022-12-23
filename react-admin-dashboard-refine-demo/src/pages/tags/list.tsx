@@ -88,7 +88,7 @@ export const TagList: React.FC<IResourceComponentsProps> = () => {
     syncWithLocation: false,
   });
 
-  const { CloseCircleOutlined, CheckCircleOutlined } = Icons;
+
   const { triggerExport, isLoading } = useExport<ITag>({
     sorter,
     filters,
