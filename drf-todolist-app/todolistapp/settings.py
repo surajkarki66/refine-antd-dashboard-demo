@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     "drf_yasg",
     "corsheaders",
     "subtasks",
-    "tags"
+    "tags",
+    "provinces"
 ]
 
 MIDDLEWARE = [
