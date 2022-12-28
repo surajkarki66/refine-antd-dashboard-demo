@@ -13,8 +13,8 @@ from tags.models import Tag
 
 class ListTodoAPIView(ListAPIView):
     serializer_class = TodoListSerializer
-    authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated,]
+    # authentication_classes = [JWTAuthentication]
+    # permission_classes = [IsAuthenticated,]
     filter_backends = [
         DjangoFilterBackend,
         filters.SearchFilter,
@@ -37,8 +37,8 @@ class ListTodoAPIView(ListAPIView):
 
 class CreateTodoAPIView(CreateAPIView):
     serializer_class = TodoSerializer
-    authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated,]
+    # authentication_classes = [JWTAuthentication]
+    # permission_classes = [IsAuthenticated,]
 
     def perform_create(self, serializer):
         data = self.request.data
@@ -56,8 +56,8 @@ class CreateTodoAPIView(CreateAPIView):
 
 class DetailTodoAPIView(RetrieveAPIView):
     serializer_class = TodoSerializer
-    authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    # authentication_classes = [JWTAuthentication]
+    # permission_classes = [IsAuthenticated, IsAdminUser]
     lookup_field = "id"
 
     def get_queryset(self):
@@ -66,8 +66,8 @@ class DetailTodoAPIView(RetrieveAPIView):
 
 class UpdateTodoAPIView(UpdateAPIView):
     serializer_class = TodoSerializer
-    authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    # authentication_classes = [JWTAuthentication]
+    # permission_classes = [IsAuthenticated, IsAdminUser]
 
     lookup_field = "id"
 
@@ -91,8 +91,8 @@ class UpdateTodoAPIView(UpdateAPIView):
 
 class DeleteTodoAPIView(DestroyAPIView):
     serializer_class = TodoSerializer
-    authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated, IsAdminUser]
+    # authentication_classes = [JWTAuthentication]
+    # permission_classes = [IsAuthenticated, IsAdminUser]
 
     lookup_field = "id"
 
@@ -102,8 +102,8 @@ class DeleteTodoAPIView(DestroyAPIView):
 
 class TodaysTodo(ListAPIView):
     serializer_class = TodoSerializer
-    authentication_classes = [JWTAuthentication]
-    permission_classes = [IsAuthenticated]
+    # authentication_classes = [JWTAuthentication]
+    # permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         today = datetime.datetime.today()

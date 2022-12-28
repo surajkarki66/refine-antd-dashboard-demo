@@ -39,6 +39,7 @@ urlpatterns = [
     path("api/todos/", include("todos.urls")),
     path("api/subtasks/", include("subtasks.urls")),
     path("api/tags/", include("tags.urls")),
+    path("api/provinces/", include("provinces.urls")),
     path("swagger.json/", schema_view.without_ui(cache_timeout=0), name="schema-json"),
     path(
         "swagger/",
