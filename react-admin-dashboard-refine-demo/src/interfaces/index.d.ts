@@ -52,3 +52,19 @@ export interface ITag {
   created_at: Date;
   updated_at: Date;
 }
+
+export interface IProvince {
+  id: BaseKey;
+  name: string;
+  created_at: Date;
+  updated_at: Date;
+}
+
+export interface IDistrict {
+  id: BaseKey;
+  name: string;
+  province: BaseKey;
+  created_at: Date;
+  updated_at: Date;
+}
+

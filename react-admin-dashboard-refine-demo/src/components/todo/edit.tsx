@@ -12,10 +12,14 @@ import {
   RefreshButton,
   ListButton,
   Select,
-  useSelect
+  useSelect,
+  SelectProps,
 } from "@pankod/refine-antd";
 import { usePermissions } from "@pankod/refine-core";
-import { ITag } from "../../interfaces";
+import { useEffect, useState } from "react";
+
+import { axiosInstance } from "../../providers/authProvider";
+import { IDistrict, IProvince, ITag } from "../../interfaces";
 
 type EditTodoProps = {
   drawerProps: DrawerProps;
@@ -36,7 +40,8 @@ export const EditTodo: React.FC<EditTodoProps> = ({
 }) => {
   const breakpoint = Grid.useBreakpoint();
   const { data: permissionsData } = usePermissions();
-
+  const [districtOptions, setDistrictOptions] = useState([]);
+  const [provinceId, setProvinceId] = useState<SelectProps>();
   const { selectProps: tagSelectProps } = useSelect<ITag>({
     resource: "tags",
     optionLabel: "name",
@@ -55,7 +60,39 @@ export const EditTodo: React.FC<EditTodoProps> = ({
       },
     ],
   });
- 
+  const { selectProps: provinceSelectProps } = useSelect<IProvince>({
+    resource: "provinces",
+    optionLabel: "name",
+    optionValue: "id",
+    sort: [
+      {
+        field: "name",
+        order: "asc",
+      },
+    ],
+    onSearch: (value) => [
+      {
+        field: "search",
+        operator: "contains",
+        value,
+      },
+    ],
+  });
+  useEffect(() => {
+    const getDistricts = async () => {
+      const { data } = await axiosInstance.get(
+        `/provinces/districts?province=${provinceId}`
+      );
+      const newData = data.map((d: IDistrict) => {
+        return { label: d.name, value: d.id };
+      });
+      setDistrictOptions(newData);
+    };
+    if (provinceId) {
+      getDistricts();
+    }
+  }, [provinceId]);
+
   return (
     <Drawer
       {...drawerProps}
@@ -98,6 +135,7 @@ export const EditTodo: React.FC<EditTodoProps> = ({
           >
             <Input />
           </Form.Item>
+
           <Form.Item
             label="Description"
             name="desc"
@@ -110,17 +148,44 @@ export const EditTodo: React.FC<EditTodoProps> = ({
             <Input.TextArea rows={6} />
           </Form.Item>
           <Form.Item
-          label="Tag"
-          name={["tags"]}
-          rules={[
-            {
-              required: true,
-            },
-          ]}
-          
-        >
-          <Select mode="tags" {...tagSelectProps} />
-        </Form.Item>
+            label="Tag"
+            name={["tags"]}
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <Select mode="tags" {...tagSelectProps} />
+          </Form.Item>
+          <Form.Item
+            label="Province"
+            name={["province"]}
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <Select
+              {...provinceSelectProps}
+              onSelect={(value) => setProvinceId(value)}
+            />
+          </Form.Item>
+          <Form.Item
+            label="District"
+            name="district"
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <Select
+              disabled={provinceId ? false : true}
+              options={districtOptions}
+            />
+          </Form.Item>
           <Form.Item label="Is completed" name="is_completed">
             <Radio.Group>
               <Radio value={true}>Completed</Radio>

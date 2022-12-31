@@ -168,6 +168,8 @@ export const TodoList: React.FC<IResourceComponentsProps> = () => {
                 showSorterTooltip
               />
               <Table.Column dataIndex={["owner", "username"]} title="Owner" />
+              <Table.Column dataIndex={["province", "name"]} title="Province" />
+              <Table.Column dataIndex={["district", "name"]} title="District" />
               <Table.Column<ITodo>
                 key="tags"
                 dataIndex="tags"
@@ -177,7 +179,7 @@ export const TodoList: React.FC<IResourceComponentsProps> = () => {
                     content={
                       <>
                         {record.tags.map((tag) => (
-                          <Tag color={randomHexColor()}>{tag.name}</Tag>
+                          <Tag key={tag.id} color={randomHexColor()}>{tag.name}</Tag>
                         ))}
                       </>
                     }

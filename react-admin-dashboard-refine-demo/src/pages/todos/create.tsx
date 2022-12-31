@@ -3,6 +3,7 @@ import {
   Form,
   Input,
   Select,
+  SelectProps,
   useForm,
   useSelect,
 } from "@pankod/refine-antd";
@@ -12,9 +13,12 @@ import {
   useCustom,
   HttpError,
 } from "@pankod/refine-core";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
+import { axiosInstance } from "../../providers/authProvider";
 import {
+  IDistrict,
+  IProvince,
   ITag,
   ITodo,
   IUser,
@@ -23,6 +27,8 @@ import {
 
 export const TodoCreate: React.FC<IResourceComponentsProps> = () => {
   const [title, setTitle] = useState("");
+  const [districtOptions, setDistrictOptions] = useState([]);
+  const [provinceId, setProvinceId] = useState<SelectProps>();
   const apiUrl = useApiUrl();
   const url = `${apiUrl}/todos/getTodoByTitle/${title}/`;
 
@@ -38,26 +44,8 @@ export const TodoCreate: React.FC<IResourceComponentsProps> = () => {
       enabled: false,
     },
   });
+
   console.log("Refetch", refetch);
-  const { selectProps: tagSelectProps } = useSelect<ITag>({
-    resource: "tags",
-    optionLabel: "name",
-    optionValue: "id",
-    sort: [
-      {
-        field: "name",
-        order: "asc",
-      },
-    ],
-    onSearch: (value) => [
-      {
-        field: "search",
-        operator: "contains",
-        value,
-      },
-    ],
-  });
-  const { formProps, saveButtonProps } = useForm<ITodo>();
   const { selectProps: userSelectProps } = useSelect<IUser>({
     resource: "users",
     optionLabel: "username",
@@ -83,6 +71,57 @@ export const TodoCreate: React.FC<IResourceComponentsProps> = () => {
       },
     ],
   });
+
+  const { selectProps: tagSelectProps } = useSelect<ITag>({
+    resource: "tags",
+    optionLabel: "name",
+    optionValue: "id",
+    sort: [
+      {
+        field: "name",
+        order: "asc",
+      },
+    ],
+    onSearch: (value) => [
+      {
+        field: "search",
+        operator: "contains",
+        value,
+      },
+    ],
+  });
+  const { formProps, saveButtonProps } = useForm<ITodo>();
+  const { selectProps: provinceSelectProps } = useSelect<IProvince>({
+    resource: "provinces",
+    optionLabel: "name",
+    optionValue: "id",
+    sort: [
+      {
+        field: "name",
+        order: "asc",
+      },
+    ],
+    onSearch: (value) => [
+      {
+        field: "search",
+        operator: "contains",
+        value,
+      },
+    ],
+  });
+
+  useEffect(() => {
+    const getDistricts = async () => {
+      const { data } = await axiosInstance.get(
+        `/provinces/districts?province=${provinceId}`
+      );
+      const newData = data.map((d: IDistrict) => {
+        return { label: d.name, value: d.id };
+      });
+      setDistrictOptions(newData);
+    };
+    if (provinceId) getDistricts();
+  }, [provinceId]);
 
   return (
     <Create saveButtonProps={saveButtonProps}>
@@ -129,7 +168,35 @@ export const TodoCreate: React.FC<IResourceComponentsProps> = () => {
             },
           ]}
         >
-          <Select showSearch={true} mode="tags" {...tagSelectProps} />
+          <Select mode="multiple" showSearch={true} {...tagSelectProps} />
+        </Form.Item>
+        <Form.Item
+          label="Province"
+          name="province"
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Select
+            {...provinceSelectProps}
+            onSelect={(value) => setProvinceId(value)}
+          />
+        </Form.Item>
+        <Form.Item
+          label="District"
+          name="district"
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Select
+            disabled={provinceId ? false : true}
+            options={districtOptions}
+          />
         </Form.Item>
         <Form.Item
           label="Owner"

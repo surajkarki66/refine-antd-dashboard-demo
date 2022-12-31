@@ -90,6 +90,7 @@ export const DjangoDataProvider = (
     hasPagination = true,
     pagination = { current: 1, pageSize: 7 },
     filters,
+    metaData,
     sort,
   }) => {
     const url = `${apiUrl}/${resource}`;

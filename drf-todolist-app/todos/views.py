@@ -1,4 +1,6 @@
 import datetime
+from rest_framework import status
+from rest_framework.response import Response
 from rest_framework.generics import ListAPIView, CreateAPIView, ListCreateAPIView, UpdateAPIView, ListAPIView, RetrieveAPIView, DestroyAPIView
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 from rest_framework import filters
@@ -9,12 +11,13 @@ from django_filters.rest_framework import DjangoFilterBackend
 from todos.serializers import TodoSerializer, TodoDetailSerializer, TodoListSerializer
 from todos.models import Todo
 from tags.models import Tag
+from provinces.models import Province, District
 
 
 class ListTodoAPIView(ListAPIView):
     serializer_class = TodoListSerializer
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsAuthenticated,]
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated,]
     filter_backends = [
         DjangoFilterBackend,
         filters.SearchFilter,
@@ -35,20 +38,14 @@ class ListTodoAPIView(ListAPIView):
     def get_queryset(self):
         return Todo.objects.filter()
 
+
 class CreateTodoAPIView(CreateAPIView):
     serializer_class = TodoSerializer
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsAuthenticated,]
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated,]
 
     def perform_create(self, serializer):
-        data = self.request.data
-        new_todo = Todo.objects.create(title=data["title"], desc=data["desc"], owner=self.request.user)
-
-        for tag_id in data["tags"]:
-            tag_obj = Tag.objects.get(id=tag_id)
-            new_todo.tags.add(tag_obj)
-
-        return serializer.save()
+        return serializer.save(owner=self.request.user)
 
     def get_queryset(self):
         return Todo.objects.filter()
@@ -56,8 +53,8 @@ class CreateTodoAPIView(CreateAPIView):
 
 class DetailTodoAPIView(RetrieveAPIView):
     serializer_class = TodoSerializer
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsAuthenticated, IsAdminUser]
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated, IsAdminUser]
     lookup_field = "id"
 
     def get_queryset(self):
@@ -66,33 +63,22 @@ class DetailTodoAPIView(RetrieveAPIView):
 
 class UpdateTodoAPIView(UpdateAPIView):
     serializer_class = TodoSerializer
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsAuthenticated, IsAdminUser]
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated, IsAdminUser]
 
     lookup_field = "id"
 
     def perform_update(self, serializer):
-        data = self.request.data
-        todo_object = Todo.objects.get(id=self.kwargs["id"])
+        return serializer.save(owner=self.request.user)
 
-        todo_object.title = data["title"]
-        todo_object.desc = data["desc"]
-        todo_object.owner = self.request.user
-      
-        for tag_id in data["tags"]:
-            tag_obj = Tag.objects.get(id=tag_id)
-            todo_object.tags.add(tag_obj)
-
-        return serializer.save()
-
-    
     def get_queryset(self):
         return Todo.objects.filter()
 
+
 class DeleteTodoAPIView(DestroyAPIView):
     serializer_class = TodoSerializer
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsAuthenticated, IsAdminUser]
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated, IsAdminUser]
 
     lookup_field = "id"
 
@@ -102,8 +88,8 @@ class DeleteTodoAPIView(DestroyAPIView):
 
 class TodaysTodo(ListAPIView):
     serializer_class = TodoSerializer
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
         today = datetime.datetime.today()
