@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:officeooo="http://openoffice.org/2009/office" xmlns:css3t="http://www.w3.org/TR/css3-text/" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rpt="http://openoffice.org/2005/report" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:xforms="http://www.w3.org/2002/xforms" office:version="1.3" office:mimetype="application/vnd.oasis.opendocument.text">
- <office:meta><meta:generator>LibreOffice/7.3.7.2$Linux_X86_64 LibreOffice_project/30$Build-2</meta:generator><dc:date>2023-01-04T19:55:05.179037369</dc:date><meta:editing-duration>PT2H58M14S</meta:editing-duration><meta:editing-cycles>82</meta:editing-cycles><meta:document-statistic meta:table-count="0" meta:image-count="3" meta:object-count="0" meta:page-count="5" meta:paragraph-count="45" meta:word-count="354" meta:character-count="2055" meta:non-whitespace-character-count="1758"/></office:meta>
+ <office:meta><meta:generator>LibreOffice/7.3.7.2$Linux_X86_64 LibreOffice_project/30$Build-2</meta:generator><dc:date>2023-01-04T20:41:02.302017206</dc:date><meta:editing-duration>PT3H33M50S</meta:editing-duration><meta:editing-cycles>99</meta:editing-cycles><meta:document-statistic meta:table-count="0" meta:image-count="3" meta:object-count="0" meta:page-count="4" meta:paragraph-count="39" meta:word-count="329" meta:character-count="1908" meta:non-whitespace-character-count="1626"/></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
-   <config:config-item config:name="ViewAreaTop" config:type="long">110490</config:config-item>
+   <config:config-item config:name="ViewAreaTop" config:type="long">92498</config:config-item>
    <config:config-item config:name="ViewAreaLeft" config:type="long">0</config:config-item>
-   <config:config-item config:name="ViewAreaWidth" config:type="long">27813</config:config-item>
-   <config:config-item config:name="ViewAreaHeight" config:type="long">15335</config:config-item>
+   <config:config-item config:name="ViewAreaWidth" config:type="long">36530</config:config-item>
+   <config:config-item config:name="ViewAreaHeight" config:type="long">21682</config:config-item>
    <config:config-item config:name="ShowRedlineChanges" config:type="boolean">true</config:config-item>
    <config:config-item config:name="InBrowseMode" config:type="boolean">false</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view2</config:config-item>
-     <config:config-item config:name="ViewLeft" config:type="long">6382</config:config-item>
-     <config:config-item config:name="ViewTop" config:type="long">119197</config:config-item>
+     <config:config-item config:name="ViewLeft" config:type="long">9470</config:config-item>
+     <config:config-item config:name="ViewTop" config:type="long">108098</config:config-item>
      <config:config-item config:name="VisibleLeft" config:type="long">0</config:config-item>
-     <config:config-item config:name="VisibleTop" config:type="long">110490</config:config-item>
-     <config:config-item config:name="VisibleRight" config:type="long">27811</config:config-item>
-     <config:config-item config:name="VisibleBottom" config:type="long">125823</config:config-item>
+     <config:config-item config:name="VisibleTop" config:type="long">92498</config:config-item>
+     <config:config-item config:name="VisibleRight" config:type="long">36528</config:config-item>
+     <config:config-item config:name="VisibleBottom" config:type="long">114178</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
      <config:config-item config:name="ViewLayoutColumns" config:type="short">1</config:config-item>
      <config:config-item config:name="ViewLayoutBookMode" config:type="boolean">false</config:config-item>
-     <config:config-item config:name="ZoomFactor" config:type="short">88</config:config-item>
+     <config:config-item config:name="ZoomFactor" config:type="short">67</config:config-item>
      <config:config-item config:name="IsSelectedFrame" config:type="boolean">false</config:config-item>
      <config:config-item config:name="KeepRatio" config:type="boolean">false</config:config-item>
      <config:config-item config:name="AnchoredTextOverflowLegacy" config:type="boolean">false</config:config-item>
@@ -104,7 +104,7 @@
    </config:config-item-map-indexed>
    <config:config-item config:name="PrinterSetup" config:type="base64Binary"/>
    <config:config-item config:name="AddParaTableSpacingAtStart" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="Rsid" config:type="int">2245249</config:config-item>
+   <config:config-item config:name="Rsid" config:type="int">2294747</config:config-item>
    <config:config-item config:name="EmbeddedDatabaseName" config:type="string"/>
    <config:config-item config:name="FieldAutoUpdate" config:type="boolean">true</config:config-item>
    <config:config-item config:name="OutlineLevelYieldsNumbering" config:type="boolean">false</config:config-item>
@@ -450,22 +450,22 @@
   </style:style>
   <style:style style:name="P42" style:family="paragraph" style:parent-style-name="Text_20_body" style:list-style-name="L6">
    <style:paragraph-properties fo:line-height="150%"/>
-   <style:text-properties officeooo:paragraph-rsid="001cb569"/>
+   <style:text-properties officeooo:paragraph-rsid="00224281"/>
   </style:style>
-  <style:style style:name="P43" style:family="paragraph" style:parent-style-name="Text_20_body" style:list-style-name="L6">
+  <style:style style:name="P43" style:family="paragraph" style:parent-style-name="Text_20_body">
    <style:paragraph-properties fo:line-height="150%"/>
    <style:text-properties officeooo:paragraph-rsid="00224281"/>
   </style:style>
-  <style:style style:name="P44" style:family="paragraph" style:parent-style-name="Text_20_body">
-   <style:paragraph-properties fo:line-height="150%" fo:text-align="justify" style:justify-single-word="false"/>
-   <style:text-properties officeooo:rsid="00220891" officeooo:paragraph-rsid="00220891"/>
-  </style:style>
-  <style:style style:name="P45" style:family="paragraph" style:parent-style-name="Text_20_body" style:list-style-name="L6">
+  <style:style style:name="P44" style:family="paragraph" style:parent-style-name="Text_20_body" style:list-style-name="L6">
    <style:paragraph-properties fo:line-height="150%" fo:text-align="justify" style:justify-single-word="false"/>
    <style:text-properties officeooo:rsid="00224281" officeooo:paragraph-rsid="00224281"/>
   </style:style>
-  <style:style style:name="P46" style:family="paragraph" style:parent-style-name="Text_20_body">
+  <style:style style:name="P45" style:family="paragraph" style:parent-style-name="Text_20_body">
    <style:paragraph-properties fo:line-height="150%" fo:text-align="justify" style:justify-single-word="false"/>
+   <style:text-properties officeooo:rsid="00224281" officeooo:paragraph-rsid="00224281"/>
+  </style:style>
+  <style:style style:name="P46" style:family="paragraph" style:parent-style-name="Text_20_body" style:list-style-name="L7">
+   <style:paragraph-properties fo:line-height="150%"/>
    <style:text-properties officeooo:rsid="00224281" officeooo:paragraph-rsid="00224281"/>
   </style:style>
   <style:style style:name="P47" style:family="paragraph">
@@ -502,99 +502,102 @@
    <style:text-properties fo:font-weight="bold" officeooo:rsid="0020c435" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="T5" style:family="text">
-   <style:text-properties fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+   <style:text-properties fo:font-weight="bold" officeooo:rsid="00224281" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="T6" style:family="text">
-   <style:text-properties fo:font-weight="normal" officeooo:rsid="001cb569" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+   <style:text-properties fo:font-weight="normal" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T7" style:family="text">
-   <style:text-properties fo:font-weight="normal" officeooo:rsid="001d61d0" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+   <style:text-properties fo:font-weight="normal" officeooo:rsid="001cb569" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T8" style:family="text">
-   <style:text-properties fo:font-weight="normal" officeooo:rsid="001deeaf" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+   <style:text-properties fo:font-weight="normal" officeooo:rsid="001d61d0" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T9" style:family="text">
-   <style:text-properties fo:font-weight="normal" officeooo:rsid="0020c435" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+   <style:text-properties fo:font-weight="normal" officeooo:rsid="001deeaf" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T10" style:family="text">
-   <style:text-properties fo:font-weight="normal" officeooo:rsid="002155f3" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+   <style:text-properties fo:font-weight="normal" officeooo:rsid="0020c435" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T11" style:family="text">
-   <style:text-properties fo:font-weight="normal" officeooo:rsid="00220891" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+   <style:text-properties fo:font-weight="normal" officeooo:rsid="002155f3" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T12" style:family="text">
-   <style:text-properties fo:font-weight="normal" officeooo:rsid="00224281" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+   <style:text-properties fo:font-weight="normal" officeooo:rsid="00220891" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T13" style:family="text">
-   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Liberation Serif" fo:font-style="normal" fo:font-weight="normal" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-style-complex="normal" style:font-weight-complex="normal"/>
+   <style:text-properties fo:font-weight="normal" officeooo:rsid="00224281" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T14" style:family="text">
-   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Liberation Serif" fo:font-style="normal" fo:font-weight="bold" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-style-complex="normal" style:font-weight-complex="bold"/>
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Liberation Serif" fo:font-style="normal" fo:font-weight="normal" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-style-complex="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T15" style:family="text">
-   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Liberation Serif" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal"/>
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Liberation Serif" fo:font-style="normal" fo:font-weight="bold" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-style-complex="normal" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="T16" style:family="text">
-   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Liberation Serif" fo:font-style="normal" officeooo:rsid="001c1598" style:font-style-asian="normal" style:font-style-complex="normal"/>
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Liberation Serif" fo:font-style="normal" style:font-style-asian="normal" style:font-style-complex="normal"/>
   </style:style>
   <style:style style:name="T17" style:family="text">
-   <style:text-properties fo:color="#000000" loext:opacity="100%" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Liberation Serif" fo:font-style="normal" officeooo:rsid="001c1598" style:font-style-asian="normal" style:font-style-complex="normal"/>
   </style:style>
   <style:style style:name="T18" style:family="text">
-   <style:text-properties fo:color="#000000" loext:opacity="100%" fo:font-weight="normal" officeooo:rsid="00220891" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+   <style:text-properties fo:color="#000000" loext:opacity="100%" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="T19" style:family="text">
-   <style:text-properties fo:color="#000000" loext:opacity="100%" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="00220891" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+   <style:text-properties fo:color="#000000" loext:opacity="100%" fo:font-weight="normal" officeooo:rsid="00220891" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T20" style:family="text">
-   <style:text-properties fo:color="#000000" loext:opacity="100%" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="bold" officeooo:rsid="00220891" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+   <style:text-properties fo:color="#000000" loext:opacity="100%" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="00220891" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T21" style:family="text">
-   <style:text-properties officeooo:rsid="001cb569"/>
+   <style:text-properties fo:color="#000000" loext:opacity="100%" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="bold" officeooo:rsid="00220891" style:font-style-asian="normal" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="T22" style:family="text">
-   <style:text-properties officeooo:rsid="001d61d0"/>
+   <style:text-properties officeooo:rsid="001cb569"/>
   </style:style>
   <style:style style:name="T23" style:family="text">
-   <style:text-properties officeooo:rsid="0020c435"/>
+   <style:text-properties officeooo:rsid="001d61d0"/>
   </style:style>
   <style:style style:name="T24" style:family="text">
-   <style:text-properties fo:color="#bbbbbb" loext:opacity="100%" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+   <style:text-properties officeooo:rsid="0020c435"/>
   </style:style>
   <style:style style:name="T25" style:family="text">
-   <style:text-properties fo:color="#ba2121" loext:opacity="100%" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="0020c435" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
+   <style:text-properties fo:color="#bbbbbb" loext:opacity="100%" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="T26" style:family="text">
-   <style:text-properties officeooo:rsid="00224281"/>
+   <style:text-properties fo:color="#ba2121" loext:opacity="100%" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" officeooo:rsid="0020c435" style:font-style-asian="normal" style:font-weight-asian="normal" style:font-weight-complex="normal"/>
   </style:style>
   <style:style style:name="T27" style:family="text">
-   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Liberation Serif" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+   <style:text-properties officeooo:rsid="00224281"/>
   </style:style>
   <style:style style:name="T28" style:family="text">
-   <style:text-properties fo:color="#bbbbbb" loext:opacity="100%" style:font-name="Liberation Serif" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Liberation Serif" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="T29" style:family="text">
-   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+   <style:text-properties fo:color="#bbbbbb" loext:opacity="100%" style:font-name="Liberation Serif" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="T30" style:family="text">
-   <style:text-properties fo:color="#008000" loext:opacity="100%" fo:font-size="12pt" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="bold" fo:background-color="transparent" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+   <style:text-properties fo:color="#000000" loext:opacity="100%" style:font-name="Liberation Serif" fo:font-size="12pt" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="T31" style:family="text">
-   <style:text-properties fo:color="#bbbbbb" loext:opacity="100%" fo:font-size="12pt" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+   <style:text-properties fo:color="#008000" loext:opacity="100%" fo:font-size="12pt" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="bold" fo:background-color="transparent" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="T32" style:family="text">
-   <style:text-properties fo:color="#000000" loext:opacity="100%" fo:font-size="12pt" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+   <style:text-properties fo:color="#bbbbbb" loext:opacity="100%" fo:font-size="12pt" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="T33" style:family="text">
-   <style:text-properties fo:color="#ba2121" loext:opacity="100%" fo:font-size="12pt" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+   <style:text-properties fo:color="#000000" loext:opacity="100%" fo:font-size="12pt" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="T34" style:family="text">
-   <style:text-properties fo:color="#666666" loext:opacity="100%" fo:font-size="12pt" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+   <style:text-properties fo:color="#ba2121" loext:opacity="100%" fo:font-size="12pt" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="T35" style:family="text">
-   <style:text-properties fo:color="#b00040" loext:opacity="100%" fo:font-size="12pt" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+   <style:text-properties fo:color="#666666" loext:opacity="100%" fo:font-size="12pt" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="T36" style:family="text">
+   <style:text-properties fo:color="#b00040" loext:opacity="100%" fo:font-size="12pt" fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="normal" fo:background-color="transparent" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
+  </style:style>
+  <style:style style:name="T37" style:family="text">
    <style:text-properties fo:language="zxx" fo:country="none" fo:font-style="normal" style:text-underline-style="none" fo:font-weight="bold" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
   <style:style style:name="fr1" style:family="graphic" style:parent-style-name="Graphics">
@@ -912,6 +915,58 @@
     </style:list-level-properties>
    </text:list-level-style-bullet>
   </text:list-style>
+  <text:list-style style:name="L7">
+   <text:list-level-style-bullet text:level="1" text:style-name="Bullet_20_Symbols" loext:num-list-format="%1%." text:bullet-char="•">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="0.5in" fo:text-indent="-0.25in" fo:margin-left="0.5in"/>
+    </style:list-level-properties>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="2" text:style-name="Bullet_20_Symbols" loext:num-list-format="%2%." text:bullet-char="◦">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="0.75in" fo:text-indent="-0.25in" fo:margin-left="0.75in"/>
+    </style:list-level-properties>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="3" text:style-name="Bullet_20_Symbols" loext:num-list-format="%3%." text:bullet-char="▪">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="1in" fo:text-indent="-0.25in" fo:margin-left="1in"/>
+    </style:list-level-properties>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="4" text:style-name="Bullet_20_Symbols" loext:num-list-format="%4%." text:bullet-char="•">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="1.25in" fo:text-indent="-0.25in" fo:margin-left="1.25in"/>
+    </style:list-level-properties>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="5" text:style-name="Bullet_20_Symbols" loext:num-list-format="%5%." text:bullet-char="◦">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="1.5in" fo:text-indent="-0.25in" fo:margin-left="1.5in"/>
+    </style:list-level-properties>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="6" text:style-name="Bullet_20_Symbols" loext:num-list-format="%6%." text:bullet-char="▪">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="1.75in" fo:text-indent="-0.25in" fo:margin-left="1.75in"/>
+    </style:list-level-properties>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="7" text:style-name="Bullet_20_Symbols" loext:num-list-format="%7%." text:bullet-char="•">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="2in" fo:text-indent="-0.25in" fo:margin-left="2in"/>
+    </style:list-level-properties>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="8" text:style-name="Bullet_20_Symbols" loext:num-list-format="%8%." text:bullet-char="◦">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="2.25in" fo:text-indent="-0.25in" fo:margin-left="2.25in"/>
+    </style:list-level-properties>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="9" text:style-name="Bullet_20_Symbols" loext:num-list-format="%9%." text:bullet-char="▪">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="2.5in" fo:text-indent="-0.25in" fo:margin-left="2.5in"/>
+    </style:list-level-properties>
+   </text:list-level-style-bullet>
+   <text:list-level-style-bullet text:level="10" text:style-name="Bullet_20_Symbols" loext:num-list-format="%10%." text:bullet-char="•">
+    <style:list-level-properties text:list-level-position-and-space-mode="label-alignment">
+     <style:list-level-label-alignment text:label-followed-by="listtab" text:list-tab-stop-position="2.75in" fo:text-indent="-0.25in" fo:margin-left="2.75in"/>
+    </style:list-level-properties>
+   </text:list-level-style-bullet>
+  </text:list-style>
   <style:style style:name="gr1" style:family="graphic">
    <style:graphic-properties ch2_options="{&apos;Style&apos;: &apos;default&apos;, &apos;Language&apos;: &apos;Bash&apos;, &apos;UseCharStyles&apos;: False, &apos;LineNumberRatio&apos;: 100, &apos;LineNumberStart&apos;: 1, &apos;MasterCharStyle&apos;: &apos;&apos;, &apos;ShowLineNumbers&apos;: 0, &apos;ColourizeBackground&apos;: 1, &apos;LineNumberSeparator&apos;: &apos;  &apos;, &apos;StoreOptionsWithSnippet&apos;: 1}" draw:stroke="none" svg:stroke-color="#000000" draw:fill="solid" draw:fill-color="#f8f8f8" fo:min-height="0.2126in" style:run-through="foreground" style:wrap="run-through" style:number-wrapped-paragraphs="no-limit" style:vertical-pos="from-top" style:vertical-rel="paragraph" style:horizontal-pos="from-left" style:horizontal-rel="paragraph" draw:wrap-influence-on-position="once-concurrent" loext:allow-overlap="true" style:flow-with-text="false"/>
    <style:paragraph-properties style:writing-mode="lr-tb"/>
@@ -1068,11 +1123,11 @@
      <text:p text:style-name="P27"><text:span text:style-name="Strong_20_Emphasis">Refine</text:span> is <text:span text:style-name="Emphasis">headless by design.</text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P26"><text:span text:style-name="Emphasis"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T14">Refine</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T13"> is a collection of helper </text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="Source_20_Text"><text:span text:style-name="T14">hooks</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T13">, </text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="Source_20_Text"><text:span text:style-name="T14">components</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="Source_20_Text"><text:span text:style-name="T13">, </text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T13">and </text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="Source_20_Text"><text:span text:style-name="T14">providers</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T13">. They are all decoupled from your </text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T14">UI</text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T13"> components and business logic, so they never keep you from customizing your UI or coding your own flow.</text:span></text:span></text:p>
+     <text:p text:style-name="P26"><text:span text:style-name="Emphasis"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T15">Refine</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T14"> is a collection of helper </text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="Source_20_Text"><text:span text:style-name="T15">hooks</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T14">, </text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="Source_20_Text"><text:span text:style-name="T15">components</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="Source_20_Text"><text:span text:style-name="T14">, </text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T14">and </text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="Source_20_Text"><text:span text:style-name="T15">providers</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T14">. They are all decoupled from your </text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T15">UI</text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T14"> components and business logic, so they never keep you from customizing your UI or coding your own flow.</text:span></text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P26"><text:span text:style-name="Emphasis"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T16">R</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T15">efine</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T13"> seamlessly works with any </text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T15">custom design</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T13"> or </text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T15">UI framework you favor</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T13">. For convenience, it ships with ready-made integrations for </text:span></text:span><text:a xlink:type="simple" xlink:href="https://ant.design/" office:target-frame-name="_blank" xlink:show="new" text:style-name="Internet_20_link" text:visited-style-name="Visited_20_Internet_20_Link"><text:span text:style-name="Emphasis">Ant Design System</text:span></text:a><text:span text:style-name="Emphasis"><text:span text:style-name="T13">, </text:span></text:span><text:a xlink:type="simple" xlink:href="https://mui.com/" office:target-frame-name="_blank" xlink:show="new" text:style-name="Internet_20_link" text:visited-style-name="Visited_20_Internet_20_Link"><text:span text:style-name="Emphasis">Material UI</text:span></text:a><text:span text:style-name="Emphasis"><text:span text:style-name="T13">, </text:span></text:span><text:a xlink:type="simple" xlink:href="https://mantine.dev/" office:target-frame-name="_blank" xlink:show="new" text:style-name="Internet_20_link" text:visited-style-name="Visited_20_Internet_20_Link"><text:span text:style-name="Emphasis">Mantine</text:span></text:a><text:span text:style-name="Emphasis"><text:span text:style-name="T13">, and </text:span></text:span><text:a xlink:type="simple" xlink:href="https://chakra-ui.com/" office:target-frame-name="_blank" xlink:show="new" text:style-name="Internet_20_link" text:visited-style-name="Visited_20_Internet_20_Link"><text:span text:style-name="Emphasis">Chakra UI</text:span></text:a><text:span text:style-name="Emphasis"><text:span text:style-name="T13">.</text:span></text:span></text:p>
-     <text:p text:style-name="P26"><text:span text:style-name="Emphasis"><text:span text:style-name="T13"/></text:span></text:p>
+     <text:p text:style-name="P26"><text:span text:style-name="Emphasis"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T17">R</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T16">efine</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T14"> seamlessly works with any </text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T16">custom design</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T14"> or </text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T16">UI framework you favor</text:span></text:span></text:span><text:span text:style-name="Emphasis"><text:span text:style-name="T14">. For convenience, it ships with ready-made integrations for </text:span></text:span><text:a xlink:type="simple" xlink:href="https://ant.design/" office:target-frame-name="_blank" xlink:show="new" text:style-name="Internet_20_link" text:visited-style-name="Visited_20_Internet_20_Link"><text:span text:style-name="Emphasis">Ant Design System</text:span></text:a><text:span text:style-name="Emphasis"><text:span text:style-name="T14">, </text:span></text:span><text:a xlink:type="simple" xlink:href="https://mui.com/" office:target-frame-name="_blank" xlink:show="new" text:style-name="Internet_20_link" text:visited-style-name="Visited_20_Internet_20_Link"><text:span text:style-name="Emphasis">Material UI</text:span></text:a><text:span text:style-name="Emphasis"><text:span text:style-name="T14">, </text:span></text:span><text:a xlink:type="simple" xlink:href="https://mantine.dev/" office:target-frame-name="_blank" xlink:show="new" text:style-name="Internet_20_link" text:visited-style-name="Visited_20_Internet_20_Link"><text:span text:style-name="Emphasis">Mantine</text:span></text:a><text:span text:style-name="Emphasis"><text:span text:style-name="T14">, and </text:span></text:span><text:a xlink:type="simple" xlink:href="https://chakra-ui.com/" office:target-frame-name="_blank" xlink:show="new" text:style-name="Internet_20_link" text:visited-style-name="Visited_20_Internet_20_Link"><text:span text:style-name="Emphasis">Chakra UI</text:span></text:a><text:span text:style-name="Emphasis"><text:span text:style-name="T14">.</text:span></text:span></text:p>
+     <text:p text:style-name="P26"><text:span text:style-name="Emphasis"><text:span text:style-name="T14"/></text:span></text:p>
     </text:list-item>
    </text:list>
    <text:h text:style-name="P4" text:outline-level="2">Usages</text:h>
@@ -3209,190 +3264,149 @@
    <text:h text:style-name="P15" text:outline-level="2"><text:soft-page-break/>Features</text:h>
    <text:list xml:id="list2199566178" text:style-name="L3">
     <text:list-item>
-     <text:p text:style-name="P30"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T6">SSR support</text:span></text:span><text:span text:style-name="T6"> with </text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T6">Next.js</text:span></text:span><text:span text:style-name="T6"> or </text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T6">Remix</text:span></text:span></text:p>
+     <text:p text:style-name="P30"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T7">SSR support</text:span></text:span><text:span text:style-name="T7"> with </text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T7">Next.js</text:span></text:span><text:span text:style-name="T7"> or </text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T7">Remix</text:span></text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P30"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T6">Auto-generated CRUD UIs from your API data structure</text:span></text:span></text:p>
+     <text:p text:style-name="P30"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T7">Auto-generated CRUD UIs from your API data structure</text:span></text:span></text:p>
     </text:list-item>
     <text:list-item>
      <text:p text:style-name="P30">Perfect <text:span text:style-name="Strong_20_Emphasis">state management</text:span> &amp; <text:span text:style-name="Strong_20_Emphasis">mutations</text:span> with <text:span text:style-name="Strong_20_Emphasis">React Query</text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P30"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T5">Advanced routing with any router library of your choice</text:span></text:span></text:p>
+     <text:p text:style-name="P30"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T6">Advanced routing with any router library of your choice</text:span></text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P30"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T5">Providers for seamless authentication and access control flows</text:span></text:span></text:p>
+     <text:p text:style-name="P30"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T6">Providers for seamless authentication and access control flows</text:span></text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P30"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T5">Out-of-the-box support for live / real-time applications</text:span></text:span></text:p>
+     <text:p text:style-name="P30"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T6">Out-of-the-box support for live / real-time applications</text:span></text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P30"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T5">Support for any i18n framework</text:span></text:span></text:p>
+     <text:p text:style-name="P30"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T6">Support for any i18n framework</text:span></text:span></text:p>
     </text:list-item>
    </text:list>
    <text:h text:style-name="P15" text:outline-level="2"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T1"/></text:span></text:h>
    <text:h text:style-name="P15" text:outline-level="2"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T1">Quick Start Guide</text:span></text:span></text:h>
    <text:list xml:id="list638718083" text:style-name="L4">
     <text:list-item>
-     <text:p text:style-name="P31"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T22">R</text:span></text:span><text:span text:style-name="Strong_20_Emphasis">efine</text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T5"> works on any environment you can run </text:span></text:span><text:span text:style-name="Strong_20_Emphasis">React</text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T5"> (incl. </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="Emphasis"><text:span text:style-name="T5">CRA, Next.js, Remix, Vite</text:span></text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T5"> etc.)</text:span></text:span></text:p>
+     <text:p text:style-name="P31"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T23">R</text:span></text:span><text:span text:style-name="Strong_20_Emphasis">efine</text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T6"> works on any environment you can run </text:span></text:span><text:span text:style-name="Strong_20_Emphasis">React</text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T6"> (incl. </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="Emphasis"><text:span text:style-name="T6">CRA, Next.js, Remix, Vite</text:span></text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T6"> etc.)</text:span></text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P32"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9">Normally to install refine app </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10">with AntDesign UI framework</text:span></text:span></text:p>
+     <text:p text:style-name="P32"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10">Normally to install refine app </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T11">with AntDesign UI framework</text:span></text:span></text:p>
      <text:p text:style-name="P32"><draw:frame text:anchor-type="paragraph" draw:z-index="5" draw:name="Text Frame 3" draw:style-name="gr4" draw:text-style-name="P50" svg:width="4.865in" svg:height="0.3843in" svg:x="0.4972in" svg:y="-0.0417in">
        <draw:text-box>
-        <text:p><text:span text:style-name="T17">$ npm</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">create</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">refine-app@latest</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">--</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">-o</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">refine-antd</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">tutorial</text:span></text:p>
+        <text:p><text:span text:style-name="T18">$ npm</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">create</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">refine-app@latest</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">--</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">-o</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">refine-antd</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">tutorial</text:span></text:p>
        </draw:text-box>
-      </draw:frame><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
+      </draw:frame><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P31"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T7">In this guide we are going to use Vite with React.</text:span></text:span></text:p>
+     <text:p text:style-name="P31"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T8">In this guide we are going to use Vite with React.</text:span></text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P33"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T8">Create a react app </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10">using Vite</text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T8">:</text:span></text:span></text:p>
+     <text:p text:style-name="P33"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9">Create a react app </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T11">using Vite</text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9">:</text:span></text:span></text:p>
     </text:list-item>
    </text:list>
    <text:p text:style-name="P13"><draw:frame text:anchor-type="paragraph" draw:z-index="3" draw:name="Text Frame 1" draw:style-name="gr5" draw:text-style-name="P50" svg:width="4.4862in" svg:height="0.3913in" svg:x="0.5209in" svg:y="-0.0953in">
      <draw:text-box>
-      <text:p><text:span text:style-name="T17">$</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">yarn</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">create</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">vite</text:span></text:p>
+      <text:p><text:span text:style-name="T18">$</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">yarn</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">create</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">vite</text:span></text:p>
      </draw:text-box>
-    </draw:frame><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:list xml:id="list195506785483628" text:continue-numbering="true" text:style-name="L4">
+    </draw:frame><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
+   <text:list xml:id="list204245978738487" text:continue-numbering="true" text:style-name="L4">
     <text:list-item>
-     <text:p text:style-name="P32"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9">Then install dependencies</text:span></text:span></text:p>
+     <text:p text:style-name="P32"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10">Then install dependencies</text:span></text:span></text:p>
      <text:p text:style-name="P32"><draw:frame text:anchor-type="paragraph" draw:z-index="4" draw:name="Text Frame 2" draw:style-name="gr5" draw:text-style-name="P50" svg:width="4.4862in" svg:height="0.3913in" svg:x="0.5209in" svg:y="-0.0953in">
        <draw:text-box>
-        <text:p><text:span text:style-name="T17">$</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">yarn</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">install</text:span></text:p>
+        <text:p><text:span text:style-name="T18">$</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">yarn</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">install</text:span></text:p>
        </draw:text-box>
-      </draw:frame><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
+      </draw:frame><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P34"><text:span text:style-name="Strong_20_Emphasis"><text:s/></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9">Install refine </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10">base</text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"> dependencies </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10">for Ant Design</text:span></text:span></text:p>
+     <text:p text:style-name="P34"><text:span text:style-name="Strong_20_Emphasis"><text:s/></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10">Install refine </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T11">base</text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"> dependencies </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T11">for Ant Design</text:span></text:span></text:p>
     </text:list-item>
    </text:list>
    <text:p text:style-name="P11"><draw:frame text:anchor-type="paragraph" draw:z-index="6" draw:name="Text Frame 4" draw:style-name="gr4" draw:text-style-name="P50" svg:width="7.1732in" svg:height="0.3843in" svg:x="0.5209in" svg:y="-0.0925in">
      <draw:text-box>
-      <text:p text:style-name="P49"><text:span text:style-name="T17">$</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">yarn</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">add</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">@pankod/refine-core</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">@pankod/refine-antd</text:span><text:span text:style-name="T24"> </text:span><text:span text:style-name="T17">@pankod/refine-react-router-v6</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T17"/></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T18">$</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">yarn</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">add</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">@pankod/refine-core</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">@pankod/refine-antd</text:span><text:span text:style-name="T25"> </text:span><text:span text:style-name="T18">@pankod/refine-react-router-v6</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T18"/></text:p>
      </draw:text-box>
-    </draw:frame><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:list xml:id="list195506095333295" text:continue-numbering="true" text:style-name="L4">
+    </draw:frame><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
+   <text:list xml:id="list204246320273323" text:continue-numbering="true" text:style-name="L4">
     <text:list-item>
-     <text:p text:style-name="P35"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T18">We have to </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T19">install </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T20">@pankod/refine-simple-res </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T19">for now to run the demo app</text:span></text:span></text:p>
+     <text:p text:style-name="P35"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T19">We have to </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T20">install </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T21">@pankod/refine-simple-res </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T20">for now to run the demo app</text:span></text:span></text:p>
      <text:p text:style-name="P35"><draw:frame text:anchor-type="paragraph" draw:z-index="9" draw:name="Text Frame 7" draw:style-name="gr1" draw:text-style-name="P48" svg:width="7.1732in" svg:height="0.213in" svg:x="0.5209in" svg:y="-0.0925in">
        <draw:text-box>
-        <text:p text:style-name="P47"><text:span text:style-name="T27">$</text:span><text:span text:style-name="T28"> </text:span><text:span text:style-name="T27">yarn</text:span><text:span text:style-name="T28"> </text:span><text:span text:style-name="T27">add</text:span><text:span text:style-name="T28"> </text:span><text:span text:style-name="T29">@pankod/refine-simple-res</text:span></text:p>
+        <text:p text:style-name="P47"><text:span text:style-name="T28">$</text:span><text:span text:style-name="T29"> </text:span><text:span text:style-name="T28">yarn</text:span><text:span text:style-name="T29"> </text:span><text:span text:style-name="T28">add</text:span><text:span text:style-name="T29"> </text:span><text:span text:style-name="T30">@pankod/refine-simple-res</text:span></text:p>
        </draw:text-box>
-      </draw:frame><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T19"/></text:span></text:p>
+      </draw:frame><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T20"/></text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P34"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9">Replace the contents of </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="Source_20_Text"><text:span text:style-name="T4">App.tsx</text:span></text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"> with the following code:</text:span></text:span></text:p>
+     <text:p text:style-name="P34"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10">Replace the contents of </text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="Source_20_Text"><text:span text:style-name="T4">App.tsx</text:span></text:span></text:span><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"> with the following code:</text:span></text:span></text:p>
     </text:list-item>
    </text:list>
    <text:p text:style-name="P11"><draw:frame text:anchor-type="paragraph" draw:z-index="7" draw:name="Text Frame 5" draw:style-name="gr3" draw:text-style-name="P51" svg:width="6.4157in" svg:height="0.2831in" svg:x="0.4618in" svg:y="1.8043in">
      <draw:text-box>
-      <text:p text:style-name="P49"><text:span text:style-name="T36"/></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T37"/></text:p>
      </draw:text-box>
     </draw:frame><draw:frame text:anchor-type="paragraph" draw:z-index="8" draw:name="Text Frame 6" draw:style-name="gr2" draw:text-style-name="P50" svg:width="6.913in" svg:height="4.9843in" svg:x="0.5252in" svg:y="0.0335in">
      <draw:text-box>
-      <text:p text:style-name="P49"><text:span text:style-name="T30">import</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T32">{</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T32">Refine</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T32">}</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T30">from</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T33">&quot;@pankod/refine-core&quot;</text:span><text:span text:style-name="T32">;</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T30">import</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T32">{</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"><text:s text:c="4"/></text:span><text:span text:style-name="T32">Layout,</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"><text:s text:c="4"/></text:span><text:span text:style-name="T32">ReadyPage,</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"><text:s text:c="4"/></text:span><text:span text:style-name="T32">notificationProvider,</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"><text:s text:c="4"/></text:span><text:span text:style-name="T32">ErrorComponent,</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T32">}</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T30">from</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T33">&quot;@pankod/refine-antd&quot;</text:span><text:span text:style-name="T32">;</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T30">import</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T32">routerProvider</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T30">from</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T33">&quot;@pankod/refine-react-router-v6&quot;</text:span><text:span text:style-name="T32">;</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T30">import</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T32">dataProvider</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T30">from</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T33">&quot;@pankod/refine-simple-rest&quot;</text:span><text:span text:style-name="T32">;</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"/></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T30">import</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T33">&quot;@pankod/refine-antd/dist/reset.css&quot;</text:span><text:span text:style-name="T32">;</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"/></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T30">const</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T32">App</text:span><text:span text:style-name="T34">:</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T35">React.FC</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T34">=</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T32">()</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T32">=&gt;</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T32">{</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"><text:s text:c="4"/></text:span><text:span text:style-name="T30">return</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T32">(</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"><text:s text:c="8"/></text:span><text:span text:style-name="T34">&lt;</text:span><text:span text:style-name="T32">Refine</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"><text:s text:c="12"/></text:span><text:span text:style-name="T32">routerProvider</text:span><text:span text:style-name="T34">=</text:span><text:span text:style-name="T32">{routerProvider}</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"><text:s text:c="12"/></text:span><text:span text:style-name="T32">dataProvider</text:span><text:span text:style-name="T34">=</text:span><text:span text:style-name="T32">{dataProvider(</text:span><text:span text:style-name="T33">&quot;https://api.fake-rest.refine.dev&quot;</text:span><text:span text:style-name="T32">)}</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"><text:s text:c="12"/></text:span><text:span text:style-name="T32">Layout</text:span><text:span text:style-name="T34">=</text:span><text:span text:style-name="T32">{Layout}</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"><text:s text:c="12"/></text:span><text:span text:style-name="T32">ReadyPage</text:span><text:span text:style-name="T34">=</text:span><text:span text:style-name="T32">{ReadyPage}</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"><text:s text:c="12"/></text:span><text:span text:style-name="T32">notificationProvider</text:span><text:span text:style-name="T34">=</text:span><text:span text:style-name="T32">{notificationProvider}</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"><text:s text:c="12"/></text:span><text:span text:style-name="T32">catchAll</text:span><text:span text:style-name="T34">=</text:span><text:span text:style-name="T32">{</text:span><text:span text:style-name="T34">&lt;</text:span><text:span text:style-name="T32">ErrorComponent</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T34">/&gt;</text:span><text:span text:style-name="T32">}</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"><text:s text:c="8"/></text:span><text:span text:style-name="T34">/&gt;</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"><text:s text:c="4"/></text:span><text:span text:style-name="T32">);</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T32">};</text:span></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T31"/></text:p>
-      <text:p text:style-name="P49"><text:span text:style-name="T30">export</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T30">default</text:span><text:span text:style-name="T31"> </text:span><text:span text:style-name="T32">App;</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T31">import</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T33">{</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T33">Refine</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T33">}</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T31">from</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T34">&quot;@pankod/refine-core&quot;</text:span><text:span text:style-name="T33">;</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T31">import</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T33">{</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"><text:s text:c="4"/></text:span><text:span text:style-name="T33">Layout,</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"><text:s text:c="4"/></text:span><text:span text:style-name="T33">ReadyPage,</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"><text:s text:c="4"/></text:span><text:span text:style-name="T33">notificationProvider,</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"><text:s text:c="4"/></text:span><text:span text:style-name="T33">ErrorComponent,</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T33">}</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T31">from</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T34">&quot;@pankod/refine-antd&quot;</text:span><text:span text:style-name="T33">;</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T31">import</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T33">routerProvider</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T31">from</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T34">&quot;@pankod/refine-react-router-v6&quot;</text:span><text:span text:style-name="T33">;</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T31">import</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T33">dataProvider</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T31">from</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T34">&quot;@pankod/refine-simple-rest&quot;</text:span><text:span text:style-name="T33">;</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"/></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T31">import</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T34">&quot;@pankod/refine-antd/dist/reset.css&quot;</text:span><text:span text:style-name="T33">;</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"/></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T31">const</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T33">App</text:span><text:span text:style-name="T35">:</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T36">React.FC</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T35">=</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T33">()</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T33">=&gt;</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T33">{</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"><text:s text:c="4"/></text:span><text:span text:style-name="T31">return</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T33">(</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"><text:s text:c="8"/></text:span><text:span text:style-name="T35">&lt;</text:span><text:span text:style-name="T33">Refine</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"><text:s text:c="12"/></text:span><text:span text:style-name="T33">routerProvider</text:span><text:span text:style-name="T35">=</text:span><text:span text:style-name="T33">{routerProvider}</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"><text:s text:c="12"/></text:span><text:span text:style-name="T33">dataProvider</text:span><text:span text:style-name="T35">=</text:span><text:span text:style-name="T33">{dataProvider(</text:span><text:span text:style-name="T34">&quot;https://api.fake-</text:span><text:span text:style-name="T34">rest.refine.dev&quot;</text:span><text:span text:style-name="T33">)}</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"><text:s text:c="12"/></text:span><text:span text:style-name="T33">Layout</text:span><text:span text:style-name="T35">=</text:span><text:span text:style-name="T33">{Layout}</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"><text:s text:c="12"/></text:span><text:span text:style-name="T33">ReadyPage</text:span><text:span text:style-name="T35">=</text:span><text:span text:style-name="T33">{ReadyPage}</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"><text:s text:c="12"/></text:span><text:span text:style-name="T33">notificationProvider</text:span><text:span text:style-name="T35">=</text:span><text:span text:style-name="T33">{notificationProvider}</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"><text:s text:c="12"/></text:span><text:span text:style-name="T33">catchAll</text:span><text:span text:style-name="T35">=</text:span><text:span text:style-name="T33">{</text:span><text:span text:style-name="T35">&lt;</text:span><text:span text:style-name="T33">ErrorComponent</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T35">/&gt;</text:span><text:span text:style-name="T33">}</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"><text:s text:c="8"/></text:span><text:span text:style-name="T35">/&gt;</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"><text:s text:c="4"/></text:span><text:span text:style-name="T33">);</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T33">};</text:span></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T32"/></text:p>
+      <text:p text:style-name="P49"><text:span text:style-name="T31">export</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T31">default</text:span><text:span text:style-name="T32"> </text:span><text:span text:style-name="T33">App;</text:span></text:p>
      </draw:text-box>
-    </draw:frame><text:soft-page-break/><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"><text:s text:c="12"/></text:span></text:span></text:p>
-   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:p text:style-name="P38"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T11"/></text:span></text:p>
+    </draw:frame><text:soft-page-break/><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"><text:s text:c="12"/></text:span></text:span></text:p>
+   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
+   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
+   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
+   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
+   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
+   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
+   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
+   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
+   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
+   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
+   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
+   <text:p text:style-name="P11"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T10"/></text:span></text:p>
+   <text:p text:style-name="P38"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T12"/></text:span></text:p>
    <text:list xml:id="list421565610" text:style-name="L5">
     <text:list-item>
-     <text:p text:style-name="P39"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T11">Delete all style files, imports from this react app.</text:span></text:span></text:p>
+     <text:p text:style-name="P39"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T12">Delete all style files, imports from this react app.</text:span></text:span></text:p>
     </text:list-item>
     <text:list-item>
-     <text:p text:style-name="P39"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T11">Run the following command to launch the app in development mode:</text:span></text:span></text:p>
+     <text:p text:style-name="P39"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T12">Run the following command to launch the app in development mode:</text:span></text:span></text:p>
      <text:p text:style-name="P39"><draw:frame text:anchor-type="paragraph" draw:z-index="10" draw:name="Text Frame 8" draw:style-name="gr1" draw:text-style-name="P48" svg:width="7.1732in" svg:height="0.213in" svg:x="0.5209in" svg:y="-0.0925in">
        <draw:text-box>
-        <text:p text:style-name="P47"><text:span text:style-name="T27">$</text:span><text:span text:style-name="T28"> </text:span><text:span text:style-name="T27">yarn</text:span><text:span text:style-name="T28"> </text:span><text:span text:style-name="T27">run</text:span><text:span text:style-name="T28"> </text:span><text:span text:style-name="T27">dev</text:span></text:p>
+        <text:p text:style-name="P47"><text:span text:style-name="T28">$</text:span><text:span text:style-name="T29"> </text:span><text:span text:style-name="T28">yarn</text:span><text:span text:style-name="T29"> </text:span><text:span text:style-name="T28">run</text:span><text:span text:style-name="T29"> </text:span><text:span text:style-name="T28">dev</text:span></text:p>
        </draw:text-box>
       </draw:frame></text:p>
     </text:list-item>
    </text:list>
    <text:p text:style-name="P40">On your browser, you should now see a page in localhost. That&apos;s it; you&apos;ve just created an empty refine project in react with vite.</text:p>
-   <text:p text:style-name="P44">To integrate Django rest APIs with this refine project, follow the steps outlined below.</text:p>
-   <text:list xml:id="list175145790" text:style-name="L6">
-    <text:list-item>
-     <text:p text:style-name="P45">Git clone the following repo</text:p>
-    </text:list-item>
-   </text:list>
-   <text:p text:style-name="P46"><draw:frame text:anchor-type="paragraph" draw:z-index="11" draw:name="Text Frame 9" draw:style-name="gr1" draw:text-style-name="P48" svg:width="7.1732in" svg:height="0.213in" svg:x="0.4264in" svg:y="-0.0618in">
-     <draw:text-box>
-      <text:p text:style-name="P47"><text:span text:style-name="T27">$</text:span><text:span text:style-name="T28"> </text:span><text:span text:style-name="T27">git</text:span><text:span text:style-name="T28"> </text:span><text:span text:style-name="T27">clone</text:span><text:span text:style-name="T28"> </text:span><text:span text:style-name="T27">https://github.com/surajkarki66/refine-antd-dashboard-demo.git</text:span></text:p>
-     </draw:text-box>
-    </draw:frame></text:p>
-   <text:list xml:id="list195506318957153" text:continue-numbering="true" text:style-name="L6">
-    <text:list-item>
-     <text:p text:style-name="P45"><draw:frame text:anchor-type="paragraph" draw:z-index="12" draw:name="Text Frame 10" draw:style-name="gr1" draw:text-style-name="P48" svg:width="7.1732in" svg:height="0.213in" svg:x="0.45in" svg:y="0.311in">
-       <draw:text-box>
-        <text:p text:style-name="P47"><text:span text:style-name="T27">$</text:span><text:span text:style-name="T28"> </text:span><text:span text:style-name="T27">cd </text:span><text:span text:style-name="T27">refine-antd-dashboard-demo</text:span></text:p>
-       </draw:text-box>
-      </draw:frame>Change the directory into above project.</text:p>
-     <text:p text:style-name="P45"/>
-    </text:list-item>
-    <text:list-item>
-     <text:p text:style-name="P41"><text:span text:style-name="T26">Change the directory to </text:span><text:span text:style-name="Strong_20_Emphasis">drf-todolist-app</text:span></text:p>
-    </text:list-item>
-   </text:list>
-   <text:p text:style-name="P37"><draw:frame text:anchor-type="paragraph" draw:z-index="13" draw:name="Text Frame 11" draw:style-name="gr1" draw:text-style-name="P48" svg:width="7.1732in" svg:height="0.213in" svg:x="0.5091in" svg:y="-0.0583in">
-     <draw:text-box>
-      <text:p text:style-name="P47"><text:span text:style-name="T27">$</text:span><text:span text:style-name="T28"> </text:span><text:span text:style-name="T27">cd </text:span><text:span text:style-name="T29">drf-todolist-app</text:span></text:p>
-     </draw:text-box>
-    </draw:frame><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:list xml:id="list195505886015491" text:continue-numbering="true" text:style-name="L6">
-    <text:list-item>
-     <text:p text:style-name="P43"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T12">Install dependencies of Django project.</text:span></text:span></text:p>
-    </text:list-item>
-   </text:list>
-   <text:p text:style-name="P11"><draw:frame text:anchor-type="paragraph" draw:z-index="14" draw:name="Text Frame 12" draw:style-name="gr1" draw:text-style-name="P48" svg:width="7.1732in" svg:height="0.213in" svg:x="0.5146in" svg:y="-0.0583in">
-     <draw:text-box>
-      <text:p text:style-name="P47"><text:span text:style-name="T27">$</text:span><text:span text:style-name="T28"> </text:span><text:span text:style-name="T27">pip</text:span><text:span text:style-name="T28"> </text:span><text:span text:style-name="T27">install</text:span><text:span text:style-name="T28"> </text:span><text:span text:style-name="T27">-r</text:span><text:span text:style-name="T28"> </text:span><text:span text:style-name="T27">“requirements.txt”</text:span></text:p>
-     </draw:text-box>
-    </draw:frame><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-   <text:list xml:id="list195505775042273" text:continue-numbering="true" text:style-name="L6">
-    <text:list-item>
-     <text:p text:style-name="P42"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T9"/></text:span></text:p>
-    </text:list-item>
-   </text:list>
+   <text:p text:style-name="P43"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T13">Now, we successfully setup the project and now we can continue our learning journey from here.</text:span></text:span></text:p>
+   <text:p text:style-name="P43"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T13"/></text:span></text:p>
+   <text:p text:style-name="P43"><text:span text:style-name="Strong_20_Emphasis"><text:span text:style-name="T13"/></text:span></text:p>
   </office:text>
  </office:body>
 </office:document>
