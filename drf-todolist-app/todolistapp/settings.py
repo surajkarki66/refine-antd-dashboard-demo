@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "subtasks",
     "tags",
-    "provinces"
+    "provinces",
 ]
 
 MIDDLEWARE = [
@@ -94,7 +94,7 @@ DATABASES = {
 
 
 REST_FRAMEWORK = {
-       'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
 }
 # REST_FRAMEWORK = {
 #     'DEFAULT_AUTHENTICATION_CLASSES': [

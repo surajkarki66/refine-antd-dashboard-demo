@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "68d1227ab9bfe1d93e2dbcdc42251a486c055b505fe5c41530df8a33931fa730"
+            "sha256": "26b535c907fdc40da3ca57699aa4ea1446bef7e02e73964e8410baafc4653d13"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -23,6 +23,14 @@
             ],
             "index": "pypi",
             "version": "==3.5.0"
+        },
+        "casbin": {
+            "hashes": [
+                "sha256:57a473a47e984adafa21674a6c3ddaf8857a1aa9359b7f561bd98d4258a9cbff",
+                "sha256:b910a3c42bf8ece636a86b67c0e1d1d6c80d4a42469af0d62ee230adbfc6d7af"
+            ],
+            "index": "pypi",
+            "version": "==1.17.5"
         },
         "certifi": {
             "hashes": [
@@ -328,6 +336,22 @@
             "index": "pypi",
             "version": "==22.0"
         },
+        "path": {
+            "hashes": [
+                "sha256:30fcdc78febebc7b8732dea1bd7393eed8e1fff9add6791af75a29909508f31b",
+                "sha256:bea3816e1d54f4e33aac78d2031a0b0ed2f95e69db85b45d51f17df97071da69"
+            ],
+            "index": "pypi",
+            "version": "==16.6.0"
+        },
+        "pathlib": {
+            "hashes": [
+                "sha256:6940718dfc3eff4258203ad5021090933e5c04707d5ca8cc9e73c94a7894ea9f",
+                "sha256:f35f95ab8b0f59e6d354090350b44a80a80635d22efdedfa84c7ad1cf0a74147"
+            ],
+            "index": "pypi",
+            "version": "==1.0.1"
+        },
         "pycparser": {
             "hashes": [
                 "sha256:8ee45429555515e1f6b185e78100aea234072576aa43ab53aefcae078162fca9",
@@ -407,6 +431,13 @@
             ],
             "index": "pypi",
             "version": "==0.2.7"
+        },
+        "simpleeval": {
+            "hashes": [
+                "sha256:3e0be507486d4e21cf9d08847c7e57dd61a1603950399985f7c5a0be7fd33e36",
+                "sha256:d82faa7dc88379614ea3b385fd84cc24f0aa4853432e267718526e5aeac6b1b9"
+            ],
+            "version": "==0.9.12"
         },
         "sqlparse": {
             "hashes": [

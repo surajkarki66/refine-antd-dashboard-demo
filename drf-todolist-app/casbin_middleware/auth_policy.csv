@@ -1,0 +1,4 @@
+p, admin, dashboard, list
+p, admin, tags, (list)|(create)
+p, editor, dashboard, list
+p, editor, tags, list

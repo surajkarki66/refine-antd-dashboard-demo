@@ -8,6 +8,7 @@ from rest_framework.generics import (
     DestroyAPIView,
     DestroyAPIView
 )
+from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, permissions
 from django.contrib.auth import authenticate
@@ -19,6 +20,7 @@ from authentication.serializers import (
     RegisterSerializer,
     UserSerializer,
 )
+from casbin_middleware.middleware import CasbinMiddleware
 
 
 class ListUser(ListAPIView):
@@ -54,6 +56,7 @@ class DetailUserAPIView(RetrieveAPIView):
     def get_queryset(self):
         return User.objects.all()
 
+
 class UpdateUserAPIView(UpdateAPIView):
     serializer_class = UserSerializer
     authentication_classes = [JWTAuthentication]
@@ -63,6 +66,7 @@ class UpdateUserAPIView(UpdateAPIView):
 
     def get_queryset(self):
         return User.objects.all()
+
 
 class DeleteUserAPIView(DestroyAPIView):
     serializer_class = UserSerializer
@@ -118,3 +122,17 @@ class LoginAPIView(GenericAPIView):
             {"message": "Invalid credentials, try again..."},
             status=status.HTTP_401_UNAUTHORIZED,
         )
+
+
+class CheckPermission(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get(self, request, format=None):
+        role = request.query_params.get('role')
+        path = request.query_params.get('path')
+        action = request.query_params.get('action')
+
+        result = CasbinMiddleware()
+
+        return Response(result.check_permission(role, path, action))
