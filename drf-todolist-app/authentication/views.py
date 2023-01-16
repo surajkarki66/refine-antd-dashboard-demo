@@ -20,7 +20,6 @@ from authentication.serializers import (
     RegisterSerializer,
     UserSerializer,
 )
-from casbin_middleware.middleware import CasbinMiddleware
 
 
 class ListUser(ListAPIView):
@@ -123,16 +122,3 @@ class LoginAPIView(GenericAPIView):
             status=status.HTTP_401_UNAUTHORIZED,
         )
 
-
-class CheckPermission(APIView):
-    authentication_classes = [JWTAuthentication]
-    permission_classes = (permissions.IsAuthenticated,)
-
-    def get(self, request, format=None):
-        role = request.query_params.get('role')
-        path = request.query_params.get('path')
-        action = request.query_params.get('action')
-
-        result = CasbinMiddleware()
-
-        return Response(result.check_permission(role, path, action))
