@@ -1,4 +1,0 @@
--i https://pypi.org/simple
-casbin==1.17.5
-path==16.6.0
-simpleeval==0.9.12
